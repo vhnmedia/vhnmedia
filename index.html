@@ -6,6 +6,20 @@
   <title>VHN MEDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #f5f5f5;
+      --text-color: #0d0d0d;
+      --accent-color: #ff3c78;
+      --card-bg: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0d0d0d;
+        --text-color: #f5f5f5;
+        --card-bg: #1a1a1a;
+      }
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,29 +27,26 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background-color: #0d0d0d;
-      color: #f5f5f5;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
-      scroll-behavior: smooth;
     }
     header {
       padding: 2rem;
       text-align: center;
-      background: #111;
+      background: var(--card-bg);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--text-color);
     }
     header p {
       font-size: 1.1rem;
       margin-top: 0.5rem;
-      color: #ccc;
+      color: var(--text-color);
+      opacity: 0.8;
     }
     .section {
       padding: 3rem 1.5rem;
@@ -45,7 +56,10 @@
     .section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: #ff3c78;
+      color: var(--accent-color);
+    }
+    .section p {
+      color: var(--text-color);
     }
     .services ul {
       list-style: none;
@@ -54,7 +68,7 @@
       gap: 1.5rem;
     }
     .services li {
-      background: #1a1a1a;
+      background: var(--card-bg);
       padding: 1rem;
       border-radius: 10px;
       text-align: center;
@@ -62,7 +76,21 @@
       transition: 0.3s;
     }
     .services li:hover {
-      background: #262626;
+      background: #e8e8e8;
+    }
+    .features ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+    .features li {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .portfolio {
       text-align: center;
@@ -70,77 +98,48 @@
     }
     .portfolio img {
       max-width: 100%;
-      width: 250px;
+      width: 300px;
+      height: auto;
       margin: 10px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
     .portfolio img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
     footer {
       padding: 2rem;
       text-align: center;
-      background: #111;
-      color: #aaa;
+      background: var(--card-bg);
+      color: var(--text-color);
       font-size: 0.9rem;
     }
     a {
-      color: #f56;
+      color: var(--accent-color);
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    .counter {
+    .cta {
       text-align: center;
-      font-size: 1.5rem;
       margin-top: 2rem;
-      color: #f5f5f5;
     }
-    .contact-form {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: 2rem auto;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 5px;
-      background: #111;
-      color: #fff;
-    }
-    .contact-form button {
-      background: #ff3c78;
-      color: #fff;
+    .cta a {
+      background: var(--accent-color);
+      color: white;
       padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
     }
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: #444;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 999;
+    .cta a:hover {
+      background: #e22;
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header>
     <h1>VHN MEDIA</h1>
     <p>Poster Design • Video Editing • Facebook Ads</p>
@@ -148,7 +147,7 @@
 
   <section class="section intro">
     <h2>About Us</h2>
-    <p style="color: #ddd;">We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
+    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus. Whether you're building a brand or boosting engagement, we’re here to help.</p>
   </section>
 
   <section class="section services">
@@ -160,65 +159,36 @@
     </ul>
   </section>
 
-  <section class="section portfolio">
-    <h2>Sample Posters</h2>
-    <img src="poster1.png" alt="Poster 1" onclick="enlarge(this)">
-    <img src="poster2.png" alt="Poster 2" onclick="enlarge(this)">
-    <img src="poster3.png" alt="Poster 3" onclick="enlarge(this)">
-    <img src="poster4.png" alt="Poster 4" onclick="enlarge(this)">
+  <section class="section features">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>Fast delivery</li>
+      <li>Unique & clean designs</li>
+      <li>Affordable pricing</li>
+      <li>20+ happy customers</li>
+      <li>Customer support</li>
+      <li>Custom-made designs</li>
+      <li>Professional process & layout</li>
+    </ul>
   </section>
 
-  <div class="counter">Trusted by 20+ clients and growing!</div>
+  <section class="section portfolio">
+    <h2>Sample Posters</h2>
+    <img src="poster1.png" alt="Poster 1">
+    <img src="poster2.png" alt="Poster 2">
+    <img src="poster3.png" alt="Poster 3">
+    <img src="poster4.png" alt="Poster 4">
+  </section>
 
-  <section class="section">
-    <h2>Contact Us</h2>
-    <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+  <section class="section cta">
+    <h2>Ready to work with us?</h2>
+    <a href="https://instagram.com/vhn_media" target="_blank">Contact on Instagram</a>
+    <br /><br />
+    <a href="https://wa.me/919601151323" target="_blank">Contact on WhatsApp</a>
   </section>
 
   <footer>
-    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or <a href="https://wa.me/919601151323">WhatsApp</a>.<br>
     &copy; 2025 VHN MEDIA. All rights reserved.
   </footer>
-
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      if (body.style.backgroundColor === 'white') {
-        body.style.backgroundColor = '#0d0d0d';
-        body.style.color = '#f5f5f5';
-      } else {
-        body.style.backgroundColor = 'white';
-        body.style.color = '#111';
-      }
-    }
-    function enlarge(img) {
-      const modal = document.createElement('div');
-      modal.style.position = 'fixed';
-      modal.style.top = 0;
-      modal.style.left = 0;
-      modal.style.width = '100%';
-      modal.style.height = '100%';
-      modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-      modal.style.display = 'flex';
-      modal.style.alignItems = 'center';
-      modal.style.justifyContent = 'center';
-      modal.style.zIndex = 1000;
-      const imgClone = document.createElement('img');
-      imgClone.src = img.src;
-      imgClone.style.maxWidth = '90%';
-      imgClone.style.maxHeight = '90%';
-      imgClone.style.borderRadius = '10px';
-      modal.appendChild(imgClone);
-      modal.onclick = () => document.body.removeChild(modal);
-      document.body.appendChild(modal);
-    }
-  </script>
 </body>
 </html>
