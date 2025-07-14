@@ -16,6 +16,7 @@
       background-color: #0d0d0d;
       color: #f5f5f5;
       line-height: 1.6;
+      font-size: 18px;
     }
     header {
       padding: 2rem;
@@ -24,68 +25,86 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       position: relative;
     }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: #aaa;
-    }
     header img.logo {
       position: absolute;
       top: 1rem;
       left: 1rem;
       height: 50px;
     }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      animation: fadeInDown 1s ease-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #aaa;
+      animation: fadeInUp 1s ease-out;
+    }
     .section {
-      padding: 3rem 1.5rem;
-      max-width: 1000px;
+      padding: 4rem 2rem;
+      max-width: 1200px;
       margin: auto;
+      animation: fadeIn 1.5s ease-in;
     }
     .section h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #ff3c78;
     }
     .services ul {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
     .services li {
       background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 10px;
+      padding: 1.5rem;
+      border-radius: 12px;
       text-align: center;
       font-weight: 600;
-      transition: 0.3s;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
     .services li:hover {
       background: #262626;
+      transform: scale(1.05);
     }
     .portfolio {
       text-align: center;
-      color: #999;
     }
-    .portfolio-images {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .portfolio-images img {
+    .portfolio img {
       width: 100%;
-      border-radius: 10px;
+      max-width: 400px;
+      border-radius: 12px;
+      margin: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .portfolio img:hover {
+      transform: scale(1.05);
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #ff3c78;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #e63366;
     }
     footer {
       padding: 2rem;
       text-align: center;
       background: #111;
       color: #aaa;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     a {
       color: #f56;
@@ -94,11 +113,42 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="VHN MEDIA Logo" class="logo" />
+    <img src="/mnt/data/file_00000000c7646230a4921072d7b595ed" alt="VHN Logo" class="logo" />
     <h1>VHN MEDIA</h1>
     <p>Poster Design • Video Editing • Facebook Ads</p>
   </header>
@@ -106,6 +156,7 @@
   <section class="section intro">
     <h2>About Us</h2>
     <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
+    <a class="cta-button" href="https://wa.me/919601151323" target="_blank">Contact Us on WhatsApp</a>
   </section>
 
   <section class="section services">
@@ -118,18 +169,16 @@
   </section>
 
   <section class="section portfolio">
-    <h2>Sample Work</h2>
-    <div class="portfolio-images">
-      <img src="/mnt/data/v2.png" alt="Poster Sample 1" />
-      <img src="/mnt/data/v3.png" alt="Poster Sample 2" />
-      <img src="/mnt/data/v4 (1).png" alt="Poster Sample 3" />
-      <img src="/mnt/data/249Rs.png" alt="Poster Sample 4" />
-    </div>
+    <h2>Portfolio</h2>
+    <img src="/mnt/data/file-CTeFrXTtNkkgZUH6Fu4ysZ" alt="Poster 1">
+    <img src="/mnt/data/file-2Q2Dm6VK5JvZZaCDcDqn9q" alt="Poster 2">
+    <img src="/mnt/data/file-FwyVXqiFkT9cdTZXZjWMpc" alt="Poster 3">
+    <img src="/mnt/data/file-9dij3wVqySVUdTuqMUsDGH" alt="Poster 4">
   </section>
 
   <footer>
     Connect with us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a><br>
-    WhatsApp: <a href="https://wa.me/919601151323" target="_blank">+91 9601151323</a><br>
+    Or message us on WhatsApp: <a href="https://wa.me/919601151323" target="_blank">+91 9601151323</a><br>
     &copy; 2025 VHN MEDIA. All rights reserved.
   </footer>
 </body>
