@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VHN MEDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     * {
       margin: 0;
@@ -22,10 +22,9 @@
       text-align: center;
       background: #111;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      position: relative;
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 800;
       color: #fff;
     }
@@ -34,99 +33,79 @@
       margin-top: 0.5rem;
       color: #ccc;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      background: #1a1a1a;
-    }
-    nav a {
-      color: #f5f5f5;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ff3c78;
-    }
     .section {
       padding: 3rem 1.5rem;
       max-width: 1000px;
       margin: auto;
-      text-align: center;
     }
     .section h2 {
       font-size: 2.4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
       color: #ff3c78;
     }
-    .section p {
-      color: #ccc;
-      font-size: 1rem;
-    }
-    .services ul, .why-choose ul {
+    .services ul {
       list-style: none;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 2rem;
     }
-    .services li, .why-choose li {
-      background: #2a2a2a;
+    .services li {
+      background: rgba(255, 60, 120, 0.1);
       padding: 1.5rem;
       border-radius: 12px;
+      text-align: center;
       font-weight: 600;
+      box-shadow: 0 0 10px rgba(255, 60, 120, 0.2);
       transition: 0.3s;
-      box-shadow: 0 0 15px rgba(255, 60, 120, 0.1);
     }
-    .services li:hover, .why-choose li:hover {
-      background: #ff3c78;
-      color: #fff;
+    .services li:hover {
+      transform: translateY(-5px);
     }
-    .portfolio-btn {
-      margin-top: 3rem;
-      padding: 1.5rem 2.5rem;
-      font-size: 1.5rem;
+    .portfolio-button {
+      display: block;
+      margin: 4rem auto 2rem;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.4rem;
       background: #ff3c78;
-      color: #fff;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(255, 60, 120, 0.3);
-      transition: transform 0.2s;
+      transition: 0.3s;
     }
-    .portfolio-btn:hover {
-      transform: scale(1.05);
+    .portfolio-button:hover {
+      background: #e53067;
     }
     .portfolio-section {
-      display: none;
-      padding: 3rem 1.5rem;
-    }
-    .portfolio-toggle {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .poster-gallery {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      gap: 20px;
+      margin-top: 2rem;
     }
-    .portfolio-toggle button {
-      background: #1a1a1a;
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      border: 2px solid #ff3c78;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .portfolio-toggle button.active {
-      background: #ff3c78;
-      color: #fff;
-    }
-    .portfolio img {
-      max-width: 100%;
+    .poster-gallery img {
       width: 280px;
-      margin: 10px;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+    .poster-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .coming-soon {
+      margin-top: 3rem;
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
     }
     footer {
       padding: 2rem;
@@ -143,82 +122,36 @@
       text-decoration: underline;
     }
   </style>
-  <script>
-    function togglePortfolio(type) {
-      document.getElementById('posterSamples').style.display = type === 'posters' ? 'block' : 'none';
-      document.getElementById('videoSamples').style.display = type === 'videos' ? 'block' : 'none';
-
-      document.getElementById('btnPosters').classList.toggle('active', type === 'posters');
-      document.getElementById('btnVideos').classList.toggle('active', type === 'videos');
-    }
-    function showPortfolio() {
-      document.getElementById('portfolioSection').style.display = 'block';
-    }
-  </script>
 </head>
 <body>
   <header>
     <h1>VHN MEDIA</h1>
     <p>Poster Design • Video Editing • Facebook Ads</p>
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#portfolioSection">Portfolio</a>
-    <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a>
-    <a href="https://wa.me/919601151323" target="_blank">WhatsApp</a>
-  </nav>
-
-  <section id="about" class="section">
+  </header>  <section class="section intro">
     <h2>About Us</h2>
-    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
-  </section>
-
-  <section id="services" class="section services">
+    <p style="text-align:center;font-size:1.2rem;color:#ccc;">We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
+  </section>  <section class="section services">
     <h2>Our Services</h2>
     <ul>
       <li>Poster Design</li>
       <li>Video Editing</li>
       <li>Facebook Ad Setup</li>
     </ul>
-  </section>
+  </section><button class="portfolio-button">View Portfolio</button>
 
-  <section class="section why-choose">
-    <h2>Why Choose Us</h2>
-    <ul>
-      <li>Creative & Custom Designs</li>
-      <li>Fast Delivery</li>
-      <li>20+ Happy Clients</li>
-      <li>Transparent Communication</li>
-    </ul>
-  </section>
-
-  <div style="text-align:center">
-    <button class="portfolio-btn" onclick="showPortfolio()">View Portfolio</button>
-  </div>
-
-  <section id="portfolioSection" class="portfolio-section">
-    <div class="portfolio-toggle">
-      <button id="btnPosters" onclick="togglePortfolio('posters')" class="active">Poster Samples</button>
-      <button id="btnVideos" onclick="togglePortfolio('videos')">Video Samples</button>
-    </div>
-
-    <div id="posterSamples" class="portfolio">
+  <section class="section portfolio-section">
+    <h2>Sample Posters</h2>
+    <div class="poster-gallery">
       <img src="poster1.png" alt="Poster 1">
       <img src="poster2.png" alt="Poster 2">
       <img src="poster3.png" alt="Poster 3">
       <img src="poster4.png" alt="Poster 4">
     </div>
-    <div id="videoSamples" class="portfolio" style="display: none;">
-      <p style="color: #ccc; font-size: 1.2rem; margin-top: 2rem;">Coming soon...</p>
-    </div>
-  </section>
-
-  <footer>
-    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or <a href="https://wa.me/919601151323" target="_blank">WhatsApp</a>.<br>
+    <div class="coming-soon">Video Samples Coming Soon...</div>
+  </section>  <footer>
+    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or <a href="https://wa.me/919601151323">WhatsApp</a>.<br>
     &copy; 2025 VHN MEDIA. All rights reserved.
-  </footer>
-</body>
+  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+    AOS.init();
+  </script></body>
 </html>
