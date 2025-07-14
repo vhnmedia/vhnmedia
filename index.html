@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VHN MEDIA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -16,7 +16,6 @@
       background-color: #0d0d0d;
       color: #f5f5f5;
       line-height: 1.6;
-      overflow-x: hidden;
     }
     header {
       padding: 2rem;
@@ -40,118 +39,101 @@
       max-width: 1000px;
       margin: auto;
       text-align: center;
-      animation: fadeIn 1.5s ease-in-out;
     }
     .section h2 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
       color: #ff3c78;
     }
-    .services ul, .why-choose-us {
+    .services ul, .features ul {
       list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding-top: 1rem;
     }
-    .services li, .why-choose-us li {
-      background: #331010;
-      padding: 1.5rem;
-      border-radius: 12px;
-      width: 220px;
-      text-align: center;
+    .services li, .features li {
+      background: #3d1f25;
+      padding: 1.2rem;
+      border-radius: 15px;
       font-weight: 600;
-      box-shadow: 0 0 15px rgba(255, 60, 120, 0.2);
-      transition: all 0.3s;
+      transition: 0.4s;
+      box-shadow: 0 0 10px #ff3c7855;
     }
-    .services li:hover, .why-choose-us li:hover {
-      background: #552020;
+    .services li:hover, .features li:hover {
+      transform: scale(1.05);
+      background: #50262f;
+    }
+    .portfolio-button {
+      margin-top: 3rem;
+      padding: 1.5rem 3rem;
+      font-size: 1.4rem;
+      background: #ff3c78;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff3c78;
+      transition: 0.3s;
+    }
+    .portfolio-button:hover {
       transform: scale(1.05);
     }
     .portfolio-section {
-      text-align: center;
-      margin: 4rem 0;
-    }
-    .portfolio-button {
-      font-size: 2rem;
-      background: #ff3c78;
-      color: white;
-      padding: 2rem 3rem;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-    }
-    .portfolio-button:hover {
-      background: #ff5c90;
-      transform: scale(1.05);
-    }
-    .portfolio-options {
       display: none;
-      flex-direction: column;
-      align-items: center;
+      padding: 2rem;
+      background: #1a1a1a;
+      border-radius: 15px;
       margin-top: 2rem;
-    }
-    .portfolio-options button {
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      background: #262626;
-      color: #fff;
-      margin: 1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .portfolio-gallery {
-      display: none;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-      gap: 1rem;
-    }
-    .portfolio-gallery img {
-      width: 250px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    }
-    .close-btn {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      background: #ff3c78;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      border-radius: 10px;
-      display: none;
-    }
-    .cta-buttons {
       text-align: center;
-      margin: 3rem 0;
     }
-    .cta-buttons a {
-      margin: 1rem;
-      padding: 1rem 2rem;
-      background: #ff3c78;
-      color: white;
+    .portfolio-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .portfolio img {
+      width: 220px;
+      margin: 15px;
       border-radius: 10px;
-      text-decoration: none;
-      display: inline-block;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      cursor: pointer;
       transition: 0.3s;
     }
-    .cta-buttons a:hover {
-      background: #ff5c90;
+    .portfolio img:hover {
+      transform: scale(1.1);
     }
-    footer {
-      padding: 2rem;
+    .image-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .image-modal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 15px;
+    }
+    .image-modal.active {
+      display: flex;
+    }
+    .cta {
       text-align: center;
-      background: #111;
-      color: #aaa;
-      font-size: 0.9rem;
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+    .cta a {
+      background: #ff3c78;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      margin: 0 1rem;
+      text-decoration: none;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -165,9 +147,9 @@
     <p>Poster Design • Video Editing • Facebook Ads</p>
   </header>
 
-  <section class="section intro">
+  <section class="section">
     <h2>About Us</h2>
-    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
+    <p style="color:#ccc;font-size:1.1rem">We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
   </section>
 
   <section class="section services">
@@ -179,56 +161,52 @@
     </ul>
   </section>
 
-  <section class="section why-choose">
+  <section class="section features">
     <h2>Why Choose Us</h2>
-    <ul class="why-choose-us">
-      <li>Premium Designs</li>
-      <li>Fast Turnaround</li>
+    <ul>
+      <li>Eye-Catching Visuals</li>
+      <li>Professional Grade Work</li>
       <li>20+ Happy Clients</li>
-      <li>Affordable Pricing</li>
-      <li>High Engagement Results</li>
+      <li>Conversion Focused Strategy</li>
+      <li>On-Time Delivery</li>
     </ul>
   </section>
 
-  <section class="portfolio-section">
-    <button class="portfolio-button" onclick="showPortfolio()">View Portfolio</button>
-    <div class="portfolio-options" id="portfolioOptions">
-      <button onclick="showGallery('poster')">Poster Samples</button>
-      <button onclick="alert('Coming Soon!')">Video Samples</button>
-    </div>
-    <div class="portfolio-gallery" id="posterGallery">
-      <img src="poster1.png" alt="Poster 1">
-      <img src="poster2.png" alt="Poster 2">
-      <img src="poster3.png" alt="Poster 3">
-      <img src="poster4.png" alt="Poster 4">
-    </div>
-    <button class="close-btn" id="closeBtn" onclick="hidePortfolio()">×</button>
-  </section>
-
-  <div class="cta-buttons">
-    <a href="https://instagram.com/vhn_media" target="_blank">Contact us on Instagram</a>
-    <a href="https://wa.me/919601151323" target="_blank">Contact us on WhatsApp</a>
+  <div style="text-align:center">
+    <button class="portfolio-button" onclick="document.querySelector('.portfolio-section').classList.toggle('active')">View Portfolio</button>
   </div>
 
-  <footer>
-    &copy; 2025 VHN MEDIA. All rights reserved.
-  </footer>
+  <section class="portfolio-section">
+    <h2>Poster Samples</h2>
+    <div class="portfolio">
+      <img src="poster1.png" alt="Poster 1" onclick="openModal(this.src)">
+      <img src="poster2.png" alt="Poster 2" onclick="openModal(this.src)">
+      <img src="poster3.png" alt="Poster 3" onclick="openModal(this.src)">
+      <img src="poster4.png" alt="Poster 4" onclick="openModal(this.src)">
+    </div>
+
+    <h2 style="margin-top:3rem; color:#999">Video Samples</h2>
+    <p style="color:#888; font-size: 1.2rem">Coming soon...</p>
+  </section>
+
+  <div class="image-modal" onclick="closeModal()">
+    <img src="" alt="Full Preview" id="modalImg">
+  </div>
+
+  <div class="cta">
+    <a href="https://instagram.com/vhn_media" target="_blank">Contact on Instagram</a>
+    <a href="https://wa.me/919601151323" target="_blank">Contact on WhatsApp</a>
+  </div>
 
   <script>
-    function showPortfolio() {
-      document.getElementById('portfolioOptions').style.display = 'flex';
-      document.getElementById('posterGallery').style.display = 'flex';
-      document.getElementById('closeBtn').style.display = 'block';
+    function openModal(src) {
+      const modal = document.querySelector('.image-modal');
+      const modalImg = document.getElementById('modalImg');
+      modalImg.src = src;
+      modal.classList.add('active');
     }
-    function hidePortfolio() {
-      document.getElementById('portfolioOptions').style.display = 'none';
-      document.getElementById('posterGallery').style.display = 'none';
-      document.getElementById('closeBtn').style.display = 'none';
-    }
-    function showGallery(type) {
-      if (type === 'poster') {
-        document.getElementById('posterGallery').style.display = 'flex';
-      }
+    function closeModal() {
+      document.querySelector('.image-modal').classList.remove('active');
     }
   </script>
 </body>
