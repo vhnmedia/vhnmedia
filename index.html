@@ -6,20 +6,6 @@
   <title>VHN MEDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-color: #f5f5f5;
-      --text-color: #0d0d0d;
-      --accent-color: #ff3c78;
-      --card-bg: #ffffff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-color: #0d0d0d;
-        --text-color: #f5f5f5;
-        --card-bg: #1a1a1a;
-      }
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -27,164 +13,158 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      background-color: #0d0d0d;
+      color: #f5f5f5;
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     header {
-      padding: 2rem;
+      padding: 3rem 1rem 2rem;
       text-align: center;
-      background: var(--card-bg);
+      background: #111;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     header h1 {
       font-size: 3rem;
       font-weight: 800;
-      color: var(--text-color);
+      color: #fff;
+      margin-bottom: 0.5rem;
     }
     header p {
       font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: var(--text-color);
-      opacity: 0.8;
+      color: #ccc;
+    }
+    .hero {
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      color: #ff3c78;
+      margin-bottom: 0.5rem;
     }
     .section {
-      padding: 3rem 1.5rem;
-      max-width: 1000px;
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
       margin: auto;
     }
     .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--accent-color);
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+      color: #ff3c78;
+      text-align: center;
     }
     .section p {
-      color: var(--text-color);
-    }
-    .services ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-    .services li {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 10px;
       text-align: center;
-      font-weight: 600;
-      transition: 0.3s;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #ddd;
     }
-    .services li:hover {
-      background: #e8e8e8;
-    }
-    .features ul {
+    .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      padding: 0;
-      list-style: none;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .features li {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 8px;
-      font-weight: 500;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    .features div {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     }
     .portfolio {
-      text-align: center;
-      color: #999;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
     }
     .portfolio img {
-      max-width: 100%;
-      width: 300px;
-      height: auto;
-      margin: 10px;
+      width: 280px;
       border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
     .portfolio img:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     footer {
-      padding: 2rem;
+      padding: 3rem 1rem;
+      background: #111;
       text-align: center;
-      background: var(--card-bg);
-      color: var(--text-color);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      color: #aaa;
     }
-    a {
-      color: var(--accent-color);
+    footer a {
+      color: #f56;
       text-decoration: none;
+      font-weight: 600;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    .cta {
+    .cta-bar {
       text-align: center;
       margin-top: 2rem;
     }
-    .cta a {
-      background: var(--accent-color);
-      color: white;
-      padding: 0.8rem 1.5rem;
+    .cta-bar a {
+      padding: 0.75rem 1.5rem;
+      background-color: #ff3c78;
+      color: #fff;
       border-radius: 8px;
-      font-weight: 600;
-      transition: background 0.3s;
+      font-weight: bold;
+      margin: 0 10px;
+      display: inline-block;
+      transition: background-color 0.3s;
     }
-    .cta a:hover {
-      background: #e22;
+    .cta-bar a:hover {
+      background-color: #e2326a;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>VHN MEDIA</h1>
-    <p>Poster Design • Video Editing • Facebook Ads</p>
+    <p>Your Digital Creative Partner</p>
   </header>
 
-  <section class="section intro">
+  <div class="hero">
+    <h2>We help brands stand out with stunning posters, pro video editing, and high-converting ads.</h2>
+  </div>
+
+  <section class="section">
     <h2>About Us</h2>
-    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus. Whether you're building a brand or boosting engagement, we’re here to help.</p>
+    <p>VHN MEDIA is a creative agency focused on visual design and advertising performance. With over 20+ satisfied customers, we specialize in combining aesthetic design with marketing results. Let your brand speak loud, clear, and beautifully.</p>
   </section>
 
-  <section class="section services">
+  <section class="section">
     <h2>Our Services</h2>
-    <ul>
-      <li>Poster Design</li>
-      <li>Video Editing</li>
-      <li>Facebook Ad Setup</li>
-    </ul>
+    <div class="features">
+      <div>Poster Design with Aesthetic Visuals</div>
+      <div>Video Editing Tailored for Reels & Shorts</div>
+      <div>Facebook Ad Setup for Maximum ROAS</div>
+      <div>Custom Branding & Social Media Visuals</div>
+      <div>Trusted by 20+ Happy Clients</div>
+      <div>Fast Turnaround and Support</div>
+    </div>
   </section>
 
-  <section class="section features">
-    <h2>Why Choose Us</h2>
-    <ul>
-      <li>Fast delivery</li>
-      <li>Unique & clean designs</li>
-      <li>Affordable pricing</li>
-      <li>20+ happy customers</li>
-      <li>Customer support</li>
-      <li>Custom-made designs</li>
-      <li>Professional process & layout</li>
-    </ul>
-  </section>
-
-  <section class="section portfolio">
+  <section class="section">
     <h2>Sample Posters</h2>
-    <img src="poster1.png" alt="Poster 1">
-    <img src="poster2.png" alt="Poster 2">
-    <img src="poster3.png" alt="Poster 3">
-    <img src="poster4.png" alt="Poster 4">
+    <div class="portfolio">
+      <img src="poster1.png" alt="Poster 1">
+      <img src="poster2.png" alt="Poster 2">
+      <img src="poster3.png" alt="Poster 3">
+      <img src="poster4.png" alt="Poster 4">
+    </div>
   </section>
 
-  <section class="section cta">
-    <h2>Ready to work with us?</h2>
-    <a href="https://instagram.com/vhn_media" target="_blank">Contact on Instagram</a>
-    <br /><br />
-    <a href="https://wa.me/919601151323" target="_blank">Contact on WhatsApp</a>
+  <section class="cta-bar">
+    <a href="https://instagram.com/vhn_media" target="_blank">Contact us on Instagram</a>
+    <a href="https://wa.me/919601151323" target="_blank">Contact us on WhatsApp</a>
   </section>
 
   <footer>
