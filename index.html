@@ -25,7 +25,7 @@
       position: relative;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 800;
       color: #fff;
     }
@@ -34,6 +34,22 @@
       margin-top: 0.5rem;
       color: #ccc;
     }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: #1a1a1a;
+    }
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff3c78;
+    }
     .section {
       padding: 3rem 1.5rem;
       max-width: 1000px;
@@ -41,105 +57,104 @@
       text-align: center;
     }
     .section h2 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 1rem;
       color: #ff3c78;
     }
-    .services ul, .features ul {
+    .section p {
+      color: #ccc;
+      font-size: 1rem;
+    }
+    .services ul, .why-choose ul {
       list-style: none;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      padding-top: 1rem;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .services li, .features li {
-      background: #3d1f25;
-      padding: 1.2rem;
-      border-radius: 15px;
+    .services li, .why-choose li {
+      background: #2a2a2a;
+      padding: 1.5rem;
+      border-radius: 12px;
       font-weight: 600;
-      transition: 0.4s;
-      box-shadow: 0 0 10px #ff3c7855;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 60, 120, 0.1);
     }
-    .services li:hover, .features li:hover {
-      transform: scale(1.05);
-      background: #50262f;
-    }
-    .portfolio-button {
-      margin-top: 3rem;
-      padding: 1.5rem 3rem;
-      font-size: 1.4rem;
+    .services li:hover, .why-choose li:hover {
       background: #ff3c78;
-      color: white;
+      color: #fff;
+    }
+    .portfolio-btn {
+      margin-top: 3rem;
+      padding: 1.5rem 2.5rem;
+      font-size: 1.5rem;
+      background: #ff3c78;
+      color: #fff;
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 0 15px #ff3c78;
-      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(255, 60, 120, 0.3);
+      transition: transform 0.2s;
     }
-    .portfolio-button:hover {
+    .portfolio-btn:hover {
       transform: scale(1.05);
     }
     .portfolio-section {
       display: none;
-      padding: 2rem;
-      background: #1a1a1a;
-      border-radius: 15px;
-      margin-top: 2rem;
-      text-align: center;
+      padding: 3rem 1.5rem;
     }
-    .portfolio-section.active {
-      display: block;
-      animation: fadeIn 0.5s ease-in-out;
+    .portfolio-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .portfolio-toggle button {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid #ff3c78;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .portfolio-toggle button.active {
+      background: #ff3c78;
+      color: #fff;
     }
     .portfolio img {
-      width: 220px;
-      margin: 15px;
+      max-width: 100%;
+      width: 280px;
+      margin: 10px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      cursor: pointer;
-      transition: 0.3s;
     }
-    .portfolio img:hover {
-      transform: scale(1.1);
-    }
-    .image-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .image-modal img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 15px;
-    }
-    .image-modal.active {
-      display: flex;
-    }
-    .cta {
+    footer {
+      padding: 2rem;
       text-align: center;
-      margin-top: 2rem;
-      font-size: 1rem;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
     }
-    .cta a {
-      background: #ff3c78;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      margin: 0 1rem;
+    a {
+      color: #f56;
       text-decoration: none;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
+  <script>
+    function togglePortfolio(type) {
+      document.getElementById('posterSamples').style.display = type === 'posters' ? 'block' : 'none';
+      document.getElementById('videoSamples').style.display = type === 'videos' ? 'block' : 'none';
+
+      document.getElementById('btnPosters').classList.toggle('active', type === 'posters');
+      document.getElementById('btnVideos').classList.toggle('active', type === 'videos');
+    }
+    function showPortfolio() {
+      document.getElementById('portfolioSection').style.display = 'block';
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -147,12 +162,21 @@
     <p>Poster Design • Video Editing • Facebook Ads</p>
   </header>
 
-  <section class="section">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolioSection">Portfolio</a>
+    <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a>
+    <a href="https://wa.me/919601151323" target="_blank">WhatsApp</a>
+  </nav>
+
+  <section id="about" class="section">
     <h2>About Us</h2>
-    <p style="color:#ccc;font-size:1.1rem">We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
+    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
   </section>
 
-  <section class="section services">
+  <section id="services" class="section services">
     <h2>Our Services</h2>
     <ul>
       <li>Poster Design</li>
@@ -161,53 +185,40 @@
     </ul>
   </section>
 
-  <section class="section features">
+  <section class="section why-choose">
     <h2>Why Choose Us</h2>
     <ul>
-      <li>Eye-Catching Visuals</li>
-      <li>Professional Grade Work</li>
+      <li>Creative & Custom Designs</li>
+      <li>Fast Delivery</li>
       <li>20+ Happy Clients</li>
-      <li>Conversion Focused Strategy</li>
-      <li>On-Time Delivery</li>
+      <li>Transparent Communication</li>
     </ul>
   </section>
 
   <div style="text-align:center">
-    <button class="portfolio-button" onclick="document.querySelector('.portfolio-section').classList.toggle('active')">View Portfolio</button>
+    <button class="portfolio-btn" onclick="showPortfolio()">View Portfolio</button>
   </div>
 
-  <section class="portfolio-section">
-    <h2>Poster Samples</h2>
-    <div class="portfolio">
-      <img src="poster1.png" alt="Poster 1" onclick="openModal(this.src)">
-      <img src="poster2.png" alt="Poster 2" onclick="openModal(this.src)">
-      <img src="poster3.png" alt="Poster 3" onclick="openModal(this.src)">
-      <img src="poster4.png" alt="Poster 4" onclick="openModal(this.src)">
+  <section id="portfolioSection" class="portfolio-section">
+    <div class="portfolio-toggle">
+      <button id="btnPosters" onclick="togglePortfolio('posters')" class="active">Poster Samples</button>
+      <button id="btnVideos" onclick="togglePortfolio('videos')">Video Samples</button>
     </div>
 
-    <h2 style="margin-top:3rem; color:#999">Video Samples</h2>
-    <p style="color:#888; font-size: 1.2rem">Coming soon...</p>
+    <div id="posterSamples" class="portfolio">
+      <img src="poster1.png" alt="Poster 1">
+      <img src="poster2.png" alt="Poster 2">
+      <img src="poster3.png" alt="Poster 3">
+      <img src="poster4.png" alt="Poster 4">
+    </div>
+    <div id="videoSamples" class="portfolio" style="display: none;">
+      <p style="color: #ccc; font-size: 1.2rem; margin-top: 2rem;">Coming soon...</p>
+    </div>
   </section>
 
-  <div class="image-modal" onclick="closeModal()">
-    <img src="" alt="Full Preview" id="modalImg">
-  </div>
-
-  <div class="cta">
-    <a href="https://instagram.com/vhn_media" target="_blank">Contact on Instagram</a>
-    <a href="https://wa.me/919601151323" target="_blank">Contact on WhatsApp</a>
-  </div>
-
-  <script>
-    function openModal(src) {
-      const modal = document.querySelector('.image-modal');
-      const modalImg = document.getElementById('modalImg');
-      modalImg.src = src;
-      modal.classList.add('active');
-    }
-    function closeModal() {
-      document.querySelector('.image-modal').classList.remove('active');
-    }
-  </script>
+  <footer>
+    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or <a href="https://wa.me/919601151323" target="_blank">WhatsApp</a>.<br>
+    &copy; 2025 VHN MEDIA. All rights reserved.
+  </footer>
 </body>
 </html>
