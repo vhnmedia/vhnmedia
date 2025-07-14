@@ -11,6 +11,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
     }
     body {
       background-color: #0d0d0d;
@@ -28,42 +29,55 @@
       position: absolute;
       top: 1rem;
       left: 1rem;
-      width: 60px;
+      width: 100px;
       height: auto;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       font-weight: 800;
       color: #fff;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-top: 0.5rem;
       color: #aaa;
     }
     .section {
       padding: 3rem 1.5rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
+      animation: fadeIn 1s ease-in-out;
     }
     .section h2 {
-      font-size: 2rem;
+      font-size: 2.4rem;
       margin-bottom: 1rem;
       color: #ff3c78;
+      text-align: center;
+    }
+    .section p {
+      font-size: 1.1rem;
+      color: #ccc;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .services ul {
       list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.5rem;
+      margin-top: 2rem;
     }
     .services li {
       background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
       font-weight: 600;
       transition: 0.3s;
+      font-size: 1.1rem;
+      min-width: 200px;
+      text-align: center;
     }
     .services li:hover {
       background: #262626;
@@ -72,19 +86,30 @@
       text-align: center;
       color: #999;
     }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
     .portfolio img {
-      max-width: 100%;
-      width: 250px;
-      margin: 10px;
+      width: 100%;
+      height: auto;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .portfolio img:hover {
+      transform: scale(1.05);
     }
     footer {
       padding: 2rem;
       text-align: center;
       background: #111;
       color: #aaa;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
     a {
       color: #f56;
@@ -92,6 +117,26 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta a {
+      background-color: #ff3c78;
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s ease;
+    }
+    .cta a:hover {
+      background-color: #e2336b;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -104,7 +149,7 @@
 
   <section class="section intro">
     <h2>About Us</h2>
-    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
+    <p>VHN Media is your go-to creative agency dedicated to providing stunning visuals and digital ads that actually convert. Whether it’s eye-catching posters, cinematic video edits, or precision-targeted Facebook ads — we deliver with quality and intention.</p>
   </section>
 
   <section class="section services">
@@ -112,20 +157,27 @@
     <ul>
       <li>Poster Design</li>
       <li>Video Editing</li>
-      <li>Facebook Ad Setup</li>
+      <li>Facebook Ad Campaigns</li>
     </ul>
   </section>
 
   <section class="section portfolio">
     <h2>Sample Posters</h2>
-    <img src="poster1.png" alt="Poster 1">
-    <img src="poster2.png" alt="Poster 2">
-    <img src="poster3.png" alt="Poster 3">
-    <img src="poster4.png" alt="Poster 4">
+    <div class="portfolio-grid">
+      <img src="poster1.png" alt="Poster 1">
+      <img src="poster2.png" alt="Poster 2">
+      <img src="poster3.png" alt="Poster 3">
+      <img src="poster4.png" alt="Poster 4">
+    </div>
+  </section>
+
+  <section class="cta">
+    <a href="https://instagram.com/vhn_media" target="_blank">Contact Us on Instagram</a>
+    <br><br>
+    <a href="https://wa.me/919601151323" target="_blank">Message on WhatsApp</a>
   </section>
 
   <footer>
-    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or WhatsApp at <a href="https://wa.me/919601151323">+91 9601151323</a>.<br>
     &copy; 2025 VHN MEDIA. All rights reserved.
   </footer>
 </body>
