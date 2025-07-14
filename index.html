@@ -11,73 +11,55 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
     }
     body {
       background-color: #0d0d0d;
       color: #f5f5f5;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
     header {
       padding: 2rem;
       text-align: center;
       background: #111;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      position: relative;
-    }
-    header img.logo {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      width: 100px;
-      height: auto;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header h1 {
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       font-weight: 800;
       color: #fff;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-top: 0.5rem;
-      color: #aaa;
+      color: #ccc;
     }
     .section {
       padding: 3rem 1.5rem;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
-      animation: fadeIn 1s ease-in-out;
     }
     .section h2 {
-      font-size: 2.4rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
       color: #ff3c78;
-      text-align: center;
-    }
-    .section p {
-      font-size: 1.1rem;
-      color: #ccc;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
     }
     .services ul {
       list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
     }
     .services li {
       background: #1a1a1a;
-      padding: 1.2rem 1.5rem;
-      border-radius: 12px;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
       font-weight: 600;
       transition: 0.3s;
-      font-size: 1.1rem;
-      min-width: 200px;
-      text-align: center;
     }
     .services li:hover {
       background: #262626;
@@ -86,16 +68,10 @@
       text-align: center;
       color: #999;
     }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
     .portfolio img {
-      width: 100%;
-      height: auto;
+      max-width: 100%;
+      width: 250px;
+      margin: 10px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
       cursor: pointer;
@@ -109,7 +85,7 @@
       text-align: center;
       background: #111;
       color: #aaa;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     a {
       color: #f56;
@@ -118,38 +94,61 @@
     a:hover {
       text-decoration: underline;
     }
-    .cta {
+    .counter {
       text-align: center;
-      margin-top: 3rem;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: #f5f5f5;
     }
-    .cta a {
-      background-color: #ff3c78;
-      padding: 0.75rem 1.5rem;
+    .contact-form {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      background: #111;
       color: #fff;
-      border-radius: 8px;
-      font-weight: bold;
-      display: inline-block;
-      transition: 0.3s ease;
     }
-    .cta a:hover {
-      background-color: #e2336b;
+    .contact-form button {
+      background: #ff3c78;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #444;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 999;
     }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header>
-    <img src="logo.jpg" alt="VHN MEDIA Logo" class="logo">
     <h1>VHN MEDIA</h1>
     <p>Poster Design • Video Editing • Facebook Ads</p>
   </header>
 
   <section class="section intro">
     <h2>About Us</h2>
-    <p>VHN Media is your go-to creative agency dedicated to providing stunning visuals and digital ads that actually convert. Whether it’s eye-catching posters, cinematic video edits, or precision-targeted Facebook ads — we deliver with quality and intention.</p>
+    <p style="color: #ddd;">We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
   </section>
 
   <section class="section services">
@@ -157,28 +156,69 @@
     <ul>
       <li>Poster Design</li>
       <li>Video Editing</li>
-      <li>Facebook Ad Campaigns</li>
+      <li>Facebook Ad Setup</li>
     </ul>
   </section>
 
   <section class="section portfolio">
     <h2>Sample Posters</h2>
-    <div class="portfolio-grid">
-      <img src="poster1.png" alt="Poster 1">
-      <img src="poster2.png" alt="Poster 2">
-      <img src="poster3.png" alt="Poster 3">
-      <img src="poster4.png" alt="Poster 4">
+    <img src="poster1.png" alt="Poster 1" onclick="enlarge(this)">
+    <img src="poster2.png" alt="Poster 2" onclick="enlarge(this)">
+    <img src="poster3.png" alt="Poster 3" onclick="enlarge(this)">
+    <img src="poster4.png" alt="Poster 4" onclick="enlarge(this)">
+  </section>
+
+  <div class="counter">Trusted by 20+ clients and growing!</div>
+
+  <section class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
   </section>
 
-  <section class="cta">
-    <a href="https://instagram.com/vhn_media" target="_blank">Contact Us on Instagram</a>
-    <br><br>
-    <a href="https://wa.me/919601151323" target="_blank">Message on WhatsApp</a>
-  </section>
-
   <footer>
+    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or <a href="https://wa.me/919601151323">WhatsApp</a>.<br>
     &copy; 2025 VHN MEDIA. All rights reserved.
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      if (body.style.backgroundColor === 'white') {
+        body.style.backgroundColor = '#0d0d0d';
+        body.style.color = '#f5f5f5';
+      } else {
+        body.style.backgroundColor = 'white';
+        body.style.color = '#111';
+      }
+    }
+    function enlarge(img) {
+      const modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = 0;
+      modal.style.left = 0;
+      modal.style.width = '100%';
+      modal.style.height = '100%';
+      modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      modal.style.display = 'flex';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.zIndex = 1000;
+      const imgClone = document.createElement('img');
+      imgClone.src = img.src;
+      imgClone.style.maxWidth = '90%';
+      imgClone.style.maxHeight = '90%';
+      imgClone.style.borderRadius = '10px';
+      modal.appendChild(imgClone);
+      modal.onclick = () => document.body.removeChild(modal);
+      document.body.appendChild(modal);
+    }
+  </script>
 </body>
 </html>
