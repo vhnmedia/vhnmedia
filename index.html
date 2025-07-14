@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VHN MEDIA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,107 +13,138 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background: linear-gradient(120deg, #0d0d0d, #111);
+      background-color: #0d0d0d;
       color: #f5f5f5;
       line-height: 1.6;
-      transition: background 1s ease;
+      overflow-x: hidden;
     }
     header {
       padding: 2rem;
       text-align: center;
       background: #111;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
     header h1 {
-      font-size: 3.2rem;
+      font-size: 2.8rem;
       font-weight: 800;
       color: #fff;
     }
     header p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
-      color: #ddd;
+      color: #ccc;
     }
     .section {
       padding: 3rem 1.5rem;
       max-width: 1000px;
       margin: auto;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
     }
     .section h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
       color: #ff3c78;
     }
-    .section p {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-    .services ul {
+    .services ul, .why-choose-us {
       list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .services li {
-      background: #1f1f1f;
-      padding: 2rem;
-      border-radius: 15px;
+    .services li, .why-choose-us li {
+      background: #331010;
+      padding: 1.5rem;
+      border-radius: 12px;
+      width: 220px;
       text-align: center;
       font-weight: 600;
-      transition: 0.3s;
-      box-shadow: 0 0 15px rgba(255, 60, 120, 0.1);
+      box-shadow: 0 0 15px rgba(255, 60, 120, 0.2);
+      transition: all 0.3s;
     }
-    .services li:hover {
-      background: #2a2a2a;
-    }
-    .why-choose {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .why-choose div {
-      background: #1f1f1f;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255, 60, 120, 0.1);
-      transition: 0.3s;
+    .services li:hover, .why-choose-us li:hover {
+      background: #552020;
+      transform: scale(1.05);
     }
     .portfolio-section {
       text-align: center;
+      margin: 4rem 0;
     }
     .portfolio-button {
-      font-size: 1.4rem;
+      font-size: 2rem;
       background: #ff3c78;
-      color: #fff;
-      padding: 1rem 2rem;
+      color: white;
+      padding: 2rem 3rem;
+      border-radius: 20px;
       border: none;
-      border-radius: 50px;
-      margin: 2rem auto;
       cursor: pointer;
-      box-shadow: 0 0 15px rgba(255, 60, 120, 0.4);
-      transition: 0.3s ease;
-      display: inline-block;
+      transition: all 0.3s;
+      position: relative;
     }
     .portfolio-button:hover {
-      background: #e62b67;
+      background: #ff5c90;
+      transform: scale(1.05);
     }
-    .portfolio-grid {
+    .portfolio-options {
+      display: none;
+      flex-direction: column;
+      align-items: center;
       margin-top: 2rem;
     }
-    .portfolio-grid h3 {
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-      color: #f5f5f5;
-    }
-    .portfolio-grid p {
-      font-size: 1.4rem;
-      color: #888;
-    }
-    .portfolio-grid img {
-      width: 260px;
+    .portfolio-options button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: #262626;
+      color: #fff;
       margin: 1rem;
+      border: none;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+    .portfolio-gallery {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 1rem;
+    }
+    .portfolio-gallery img {
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: #ff3c78;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 10px;
+      display: none;
+    }
+    .cta-buttons {
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .cta-buttons a {
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background: #ff3c78;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .cta-buttons a:hover {
+      background: #ff5c90;
     }
     footer {
       padding: 2rem;
@@ -122,12 +153,9 @@
       color: #aaa;
       font-size: 0.9rem;
     }
-    a {
-      color: #f56;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -151,40 +179,57 @@
     </ul>
   </section>
 
-  <section class="section">
-    <h2>Why Choose Us?</h2>
-    <div class="why-choose">
-      <div>Quick Turnaround</div>
-      <div>Affordable Pricing</div>
-      <div>20+ Satisfied Clients</div>
-      <div>Customized Solutions</div>
-    </div>
+  <section class="section why-choose">
+    <h2>Why Choose Us</h2>
+    <ul class="why-choose-us">
+      <li>Premium Designs</li>
+      <li>Fast Turnaround</li>
+      <li>20+ Happy Clients</li>
+      <li>Affordable Pricing</li>
+      <li>High Engagement Results</li>
+    </ul>
   </section>
 
-  <section class="section portfolio-section">
-    <button class="portfolio-button">Our Portfolio</button>
-    <div class="portfolio-grid">
-      <h3>Posters</h3>
+  <section class="portfolio-section">
+    <button class="portfolio-button" onclick="showPortfolio()">View Portfolio</button>
+    <div class="portfolio-options" id="portfolioOptions">
+      <button onclick="showGallery('poster')">Poster Samples</button>
+      <button onclick="alert('Coming Soon!')">Video Samples</button>
+    </div>
+    <div class="portfolio-gallery" id="posterGallery">
       <img src="poster1.png" alt="Poster 1">
       <img src="poster2.png" alt="Poster 2">
       <img src="poster3.png" alt="Poster 3">
       <img src="poster4.png" alt="Poster 4">
-
-      <h3>Videos</h3>
-      <p>Coming Soon</p>
     </div>
+    <button class="close-btn" id="closeBtn" onclick="hidePortfolio()">×</button>
   </section>
 
+  <div class="cta-buttons">
+    <a href="https://instagram.com/vhn_media" target="_blank">Contact us on Instagram</a>
+    <a href="https://wa.me/919601151323" target="_blank">Contact us on WhatsApp</a>
+  </div>
+
   <footer>
-    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or <a href="https://wa.me/919601151323" target="_blank">WhatsApp</a>.<br>
     &copy; 2025 VHN MEDIA. All rights reserved.
   </footer>
 
   <script>
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      document.body.style.background = `linear-gradient(120deg, hsl(${scrollY % 360}, 30%, 10%), #111)`;
-    });
+    function showPortfolio() {
+      document.getElementById('portfolioOptions').style.display = 'flex';
+      document.getElementById('posterGallery').style.display = 'flex';
+      document.getElementById('closeBtn').style.display = 'block';
+    }
+    function hidePortfolio() {
+      document.getElementById('portfolioOptions').style.display = 'none';
+      document.getElementById('posterGallery').style.display = 'none';
+      document.getElementById('closeBtn').style.display = 'none';
+    }
+    function showGallery(type) {
+      if (type === 'poster') {
+        document.getElementById('posterGallery').style.display = 'flex';
+      }
+    }
   </script>
 </body>
 </html>
