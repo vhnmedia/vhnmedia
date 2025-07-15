@@ -12,7 +12,7 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background-color: #0d0d0d;
+      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
       color: #f5f5f5;
       line-height: 1.6;
     }
@@ -20,111 +20,129 @@
       padding: 2rem;
       text-align: center;
       background: #111;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       position: relative;
     }
-    header img.logo {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      width: 60px;
-      height: auto;
-    }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3.5rem;
       font-weight: 800;
       color: #fff;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 10px #0ff;
     }
     header p {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       margin-top: 0.5rem;
-      color: #fff;
+      color: #ccc;
     }
     .section {
       padding: 3rem 1.5rem;
       max-width: 1000px;
       margin: auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .section h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #ff3c78;
-      text-align: center;
     }
-    .services ul {
+    .services ul, .why-us ul {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding-top: 1.5rem;
     }
-    .services li {
-      background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 10px;
+    .services li, .why-us li {
+      background: #262626;
+      padding: 1.5rem;
+      border-radius: 12px;
       text-align: center;
       font-weight: 600;
-      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(255, 60, 120, 0.1);
+      transition: all 0.3s ease;
     }
-    .services li:hover {
-      background: #262626;
+    .services li:hover, .why-us li:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+    .portfolio-btn {
+      background: #ff3c78;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      color: white;
+      border-radius: 10px;
+      margin-top: 2rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .portfolio-btn:hover {
+      background: #e63370;
+      transform: scale(1.05);
     }
     .portfolio {
-      text-align: center;
-      color: #999;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .portfolio.active {
+      display: flex;
     }
     .portfolio img {
-      max-width: 100%;
       width: 250px;
       margin: 10px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
     }
-    .btn-group {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .btn {
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      background: #ff3c78;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-    .btn:hover {
-      background: #e53065;
-      transform: scale(1.05);
+    .portfolio img:hover {
+      transform: scale(1.1);
     }
     footer {
       padding: 2rem;
       text-align: center;
       background: #111;
       color: #aaa;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
-    a {
-      color: #f56;
+    a.cta {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #ff3c78;
+      color: white;
+      border-radius: 10px;
       text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(255, 60, 120, 0.2);
     }
-    a:hover {
-      text-decoration: underline;
+    a.cta:hover {
+      background: #e63370;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="VHN MEDIA Logo" class="logo">
     <h1>VHN MEDIA</h1>
     <p>Poster Design • Video Editing • Facebook Ads</p>
   </header>  <section class="section intro">
     <h2>About Us</h2>
-    <p style="text-align:center; color:#ccc">We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
+    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
   </section>  <section class="section services">
     <h2>Our Services</h2>
     <ul>
@@ -132,22 +150,46 @@
       <li>Video Editing</li>
       <li>Facebook Ad Setup</li>
     </ul>
-  </section>  <section class="section portfolio">
-    <h2>Portfolio</h2>
-    <div class="btn-group">
-      <button class="btn">Poster Samples</button>
-      <button class="btn">Video Samples</button>
-    </div>
-    <div style="margin-top: 2rem;">
+  </section>  <section class="section why-us">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>1-on-1 Direct Support</li>
+      <li>Creative + Conversion Focus</li>
+      <li>20+ Happy Clients</li>
+      <li>Quick Turnaround Time</li>
+    </ul>
+  </section>  <section class="section portfolio-container">
+    <button class="portfolio-btn" onclick="togglePortfolio()">View Portfolio</button>
+    <div id="portfolio" class="portfolio">
+      <h2>Sample Posters</h2>
       <img src="poster1.png" alt="Poster 1">
       <img src="poster2.png" alt="Poster 2">
       <img src="poster3.png" alt="Poster 3">
       <img src="poster4.png" alt="Poster 4">
-      <p style="font-size: 1.2rem; color: white; margin-top: 2rem;">Video Samples Coming Soon...</p>
+      <h2 style="margin-top: 2rem; color: #fff">Sample Videos</h2>
+      <p style="font-size: 1.5rem; color: #ccc">Coming Soon...</p>
     </div>
   </section>  <footer>
-    Contact us on <a href="https://instagram.com/vhn_media" target="_blank">Instagram</a> or <a href="https://wa.me/919601151323">WhatsApp</a>.<br>
-    &copy; 2025 VHN MEDIA. All rights reserved.
-  </footer>
-</body>
+    <a href="https://instagram.com/vhn_media" class="cta" target="_blank">Instagram</a>
+    <a href="https://wa.me/919601151323" class="cta" target="_blank">WhatsApp</a>
+    <br><br>&copy; 2025 VHN MEDIA. All rights reserved.
+  </footer>  <script>
+    function togglePortfolio() {
+      const portfolio = document.getElementById('portfolio');
+      portfolio.classList.toggle('active');
+      window.scrollTo({ top: portfolio.offsetTop, behavior: 'smooth' });
+    }
+
+    // Scroll animation
+    const sections = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+      const triggerBottom = window.innerHeight / 1.1;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    });
+  </script></body>
 </html>
