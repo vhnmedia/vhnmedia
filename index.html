@@ -1,85 +1,122 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VHN MEDIA - Facebook Ads Experts</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VHN MEDIA | Facebook Ads Experts</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0f0f0f;
-      color: #ffffff;
-    }
-    header {
-      background-color: #1a1a1a;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 40px;
-      font-weight: bold;
-      color: #00ff9d;
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #00ff9d;
-    }
-    .service-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background-color: #00ff9d;
-      color: #0f0f0f;
-      font-size: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    .why-us {
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    footer {
-      background-color: #1a1a1a;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .contact-button {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      background-color: #00ff9d;
-      color: #0f0f0f;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }header {
+  background-color: #1a1a1a;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #00bcd4;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+  animation: slideUp 1.2s ease-out;
+}
+
+.btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  background-color: #00bcd4;
+  color: #0f0f0f;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #008fa1;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
+  color: #cccccc;
+}
+
+footer {
+  background-color: #111;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+  background: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #008fa1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
   </style>
 </head>
-<body>
-  <header>
+<body>  <header>
     VHN MEDIA
   </header>  <section>
-    <div class="section-title">Our Services</div>
-    <a href="#services" class="service-button">Facebook Ads Management</a>
+    <h2>Our Services</h2>
+    <a href="#services" class="btn">Facebook Ads Management</a>
+  </section>  <section id="services">
+    <h2>Facebook Ads Management</h2>
+    <p>We help businesses scale with ROI-driven Facebook Ads. From creative strategy to optimization, our team ensures every ad gets the attention it deserves.</p>
   </section>  <section>
-    <div class="section-title">Why Choose Us?</div>
-    <div class="why-us">
-      We are a result-driven performance marketing agency that focuses 100% on Facebook & Instagram ads. 
-      Our team understands what converts, how to scale fast, and how to generate consistent profit for e-commerce and local businesses. 
-      We don’t do fluff – just real results that move the needle. 
-      Let your brand thrive while we manage your ads like pros.
+    <h2>Why Choose Us?</h2>
+    <p>
+      ✓ Proven strategies that convert<br>
+      ✓ Creative ad designs tailored to your audience<br>
+      ✓ Transparent reporting and performance breakdowns<br>
+      ✓ Affordable pricing with real results
+    </p>
+  </section>  <section>
+    <h2>Contact Us</h2>
+    <p>Let’s grow your business together. Reach out today:</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/vhn_media" target="_blank">Instagram</a>
+      <a href="https://wa.me/919601151323" target="_blank">WhatsApp</a>
     </div>
   </section>  <footer>
-    <div class="section-title">Contact Us</div>
-    <a class="contact-button" href="https://instagram.com/vhn_media" target="_blank">DM on Instagram</a>
-    <a class="contact-button" href="https://wa.me/919601151323" target="_blank">Message on WhatsApp</a>
-  </footer>
-</body>
+    © 2025 VHN MEDIA. All rights reserved.
+  </footer></body>
 </html>
