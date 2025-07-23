@@ -2,194 +2,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VHN MEDIA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>VHN Media | Facebook Ads Experts</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
     body {
-      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-      color: #f5f5f5;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
     }
     header {
-      padding: 2rem;
+      background-color: #0f62fe;
+      color: white;
+      padding: 20px;
       text-align: center;
-      background: #111;
-      position: relative;
     }
-    header h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: #fff;
-      text-shadow: 0 0 10px #0ff;
-    }
-    header p {
-      font-size: 1.4rem;
-      margin-top: 0.5rem;
-      color: #ccc;
-    }
-    .section {
-      padding: 3rem 1.5rem;
+    section {
+      padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-in-out;
     }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    h1, h2 {
+      margin-bottom: 20px;
     }
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #ff3c78;
+    .services, .why-choose, .cta {
+      margin-bottom: 60px;
     }
-    .services ul, .why-us ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      padding-top: 1.5rem;
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    .services li, .why-us li {
-      background: #262626;
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: 600;
-      box-shadow: 0 0 10px rgba(255, 60, 120, 0.1);
-      transition: all 0.3s ease;
-    }
-    .services li:hover, .why-us li:hover {
-      background: #333;
-      transform: scale(1.05);
-    }
-    .portfolio-btn {
-      background: #ff3c78;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
+    .cta-button {
+      display: inline-block;
+      background-color: #0f62fe;
       color: white;
-      border-radius: 10px;
-      margin-top: 2rem;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .portfolio-btn:hover {
-      background: #e63370;
-      transform: scale(1.05);
-    }
-    .portfolio {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-    }
-    .portfolio.active {
-      display: flex;
-    }
-    .portfolio img {
-      width: 250px;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .portfolio img:hover {
-      transform: scale(1.1);
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
     }
     footer {
-      padding: 2rem;
       text-align: center;
-      background: #111;
-      color: #aaa;
-      font-size: 1rem;
-    }
-    a.cta {
-      display: inline-block;
-      margin: 1rem;
-      padding: 0.8rem 1.5rem;
-      background: #ff3c78;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 0 10px rgba(255, 60, 120, 0.2);
-    }
-    a.cta:hover {
-      background: #e63370;
-    }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      header p {
-        font-size: 1.2rem;
-      }
+      padding: 20px;
+      background-color: #e0e0e0;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>VHN MEDIA</h1>
-    <p>Poster Design • Video Editing • Facebook Ads</p>
-  </header>  <section class="section intro">
-    <h2>About Us</h2>
-    <p>We help brands and creators stand out online with eye-catching posters, professional video editing, and high-converting Facebook ad services. Quality and results are our core focus.</p>
-  </section>  <section class="section services">
+    <h1>VHN Media</h1>
+    <p>Performance-Driven Facebook Ads Agency</p>
+  </header>  <section class="services">
     <h2>Our Services</h2>
-    <ul>
-      <li>Poster Design</li>
-      <li>Video Editing</li>
-      <li>Facebook Ad Setup</li>
-    </ul>
-  </section>  <section class="section why-us">
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li>1-on-1 Direct Support</li>
-      <li>Creative + Conversion Focus</li>
-      <li>20+ Happy Clients</li>
-      <li>Quick Turnaround Time</li>
-    </ul>
-  </section>  <section class="section portfolio-container">
-    <button class="portfolio-btn" onclick="togglePortfolio()">View Portfolio</button>
-    <div id="portfolio" class="portfolio">
-      <h2>Sample Posters</h2>
-      <img src="poster1.png" alt="Poster 1">
-      <img src="poster2.png" alt="Poster 2">
-      <img src="poster3.png" alt="Poster 3">
-      <img src="poster4.png" alt="Poster 4">
-      <h2 style="margin-top: 2rem; color: #fff">Sample Videos</h2>
-      <p style="font-size: 1.5rem; color: #ccc">Coming Soon...</p>
+    <div class="card">
+      <h3>Facebook Ads Management</h3>
+      <p>We create and manage high-converting ad campaigns tailored for your business.</p>
     </div>
+    <div class="card">
+      <h3>Creative Strategy</h3>
+      <p>From copywriting to visuals, we craft engaging ads that convert.</p>
+    </div>
+    <div class="card">
+      <h3>Audience Targeting</h3>
+      <p>We target the right people who are most likely to become your customers.</p>
+    </div>
+  </section>  <section class="why-choose">
+    <h2>Why Choose VHN Media?</h2>
+    <div class="card">
+      <p>🚀 ROI-Focused Campaigns</p>
+      <p>📊 Transparent Reporting</p>
+      <p>📞 Direct Communication</p>
+      <p>🔍 Data-Driven Approach</p>
+    </div>
+  </section>  <section class="cta">
+    <h2>Ready to Grow Your Business?</h2>
+    <p>Let’s scale your revenue with strategic Facebook Ads.</p>
+    <a class="cta-button" href="https://www.instagram.com/vhnmedia/" target="_blank">DM Us Now</a>
   </section>  <footer>
-    <a href="https://instagram.com/vhn_media" class="cta" target="_blank">Instagram</a>
-    <a href="https://wa.me/919601151323" class="cta" target="_blank">WhatsApp</a>
-    <br><br>&copy; 2025 VHN MEDIA. All rights reserved.
-  </footer>  <script>
-    function togglePortfolio() {
-      const portfolio = document.getElementById('portfolio');
-      portfolio.classList.toggle('active');
-      window.scrollTo({ top: portfolio.offsetTop, behavior: 'smooth' });
-    }
-
-    // Scroll animation
-    const sections = document.querySelectorAll('.section');
-    window.addEventListener('scroll', () => {
-      const triggerBottom = window.innerHeight / 1.1;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-          section.classList.add('visible');
-        }
-      });
-    });
-  </script></body>
+    <p>&copy; 2025 VHN Media. All rights reserved.</p>
+  </footer>
+</body>
 </html>
