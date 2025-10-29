@@ -1,122 +1,176 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VHN MEDIA | Facebook Ads Experts</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VHN Agency — Growth that matters</title>
+  <meta name="description" content="VHN Agency — Performance marketing, creative design & conversion-first websites for local and online businesses." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-      scroll-behavior: smooth;
-    }header {
-  background-color: #1a1a1a;
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 800;
-  color: #00bcd4;
-  animation: fadeIn 1.5s ease-in-out;
-}
+    /* Simple modern reset + utility styles */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; --radius:14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071023 0%, #081229 100%);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
 
-section {
-  padding: 60px 20px;
-  text-align: center;
-  animation: slideUp 1.2s ease-out;
-}
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#031124}
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{background:var(--accent);color:#031124;padding:10px 14px;border-radius:10px;font-weight:600}
 
-.btn {
-  display: inline-block;
-  margin: 20px auto;
-  padding: 15px 30px;
-  background-color: #00bcd4;
-  color: #0f0f0f;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .card{background:var(--card);padding:26px;border-radius:16px;box-shadow:0 6px 24px rgba(2,6,23,0.65);border:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0;font-size:34px;line-height:1.05}
+    p.lead{color:var(--muted);margin-top:12px}
+    .cta-row{display:flex;gap:12px;margin-top:18px}
 
-.btn:hover {
-  background-color: #008fa1;
-}
+    /* Features */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+    .feature{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+    .feature h4{margin:6px 0 0}
+    .muted{color:var(--muted)}
 
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
+    /* Contact */
+    form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:#e6eef6}
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+    .row{display:flex;gap:10px}
 
-p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: auto;
-  color: #cccccc;
-}
+    footer{margin-top:36px;color:var(--muted);padding:36px 0}
 
-footer {
-  background-color: #111;
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 1rem;
-}
+    /* Responsive */
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid,.portfolio{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:640px){
+      .grid,.portfolio{grid-template-columns:1fr}
+      nav{display:none}
+    }
 
-.social-links a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #fff;
-  background: #00bcd4;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.social-links a:hover {
-  background-color: #008fa1;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+    /* Small interactions */
+    .btn:hover{transform:translateY(-2px)}
+    .logo{transition:transform .25s}
+    .logo:hover{transform:rotate(-6deg) scale(1.03)}
   </style>
 </head>
-<body>  <header>
-    VHN MEDIA
-  </header>  <section>
-    <h2>Our Services</h2>
-    <a href="#services" class="btn">Facebook Ads Management</a>
-  </section>  <section id="services">
-    <h2>Facebook Ads Management</h2>
-    <p>We help businesses scale with ROI-driven Facebook Ads. From creative strategy to optimization, our team ensures every ad gets the attention it deserves.</p>
-  </section>  <section>
-    <h2>Why Choose Us?</h2>
-    <p>
-      ✓ Proven strategies that convert<br>
-      ✓ Creative ad designs tailored to your audience<br>
-      ✓ Transparent reporting and performance breakdowns<br>
-      ✓ Affordable pricing with real results
-    </p>
-  </section>  <section>
-    <h2>Contact Us</h2>
-    <p>Let’s grow your business together. Reach out today:</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/vhn_media" target="_blank">Instagram</a>
-      <a href="https://wa.me/919601151323" target="_blank">WhatsApp</a>
-    </div>
-  </section>  <footer>
-    © 2025 VHN MEDIA. All rights reserved.
-  </footer></body>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">VHN</div>
+        <div>
+          <div style="font-weight:700">VHN AGENCY</div>
+          <div style="font-size:12px;color:var(--muted)">Performance marketing & creative</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>We scale local businesses with high‑ROI ads and conversion design.</h1>
+        <p class="lead">Meta & Google ads, landing pages, and creatives that actually convert customers — not vanity metrics.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contact">Get a free audit</a>
+          <a style="padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04)" href="#portfolio">See work</a>
+        </div>
+
+        <div class="grid" id="services">
+          <div class="feature">
+            <div style="font-size:22px;">Ads that scale</div>
+            <div class="muted">Facebook & Google campaigns, funnel setup, and weekly optimization.</div>
+          </div>
+          <div class="feature">
+            <div style="font-size:22px;">Creative & Video</div>
+            <div class="muted">Short-form video, thumbnails, and high-converting ad creatives.</div>
+          </div>
+          <div class="feature">
+            <div style="font-size:22px;">Landing Pages</div>
+            <div class="muted">Fast A/B testable pages focused on conversions and tracking.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:10px">Client wins (30 days)</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="background:var(--glass);padding:12px;border-radius:10px">+79% ROAS for medspa — 42 leads</div>
+          <div style="background:var(--glass);padding:12px;border-radius:10px">Local restaurant: 65% increase in table bookings</div>
+          <div style="background:var(--glass);padding:12px;border-radius:10px">E‑comm drop: 2.8x growth in revenue</div>
+        </div>
+        <div style="margin-top:18px;font-size:13px;color:var(--muted)">Want results like these? <a href="#contact">Book a call</a></div>
+      </aside>
+    </section>
+    <section style="margin-top:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+      </div>
+    </section>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <h2>Contact</h2>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:16px;margin-top:12px">
+        <div class="card">
+          <form onsubmit="submitForm(event)">
+            <input id="name" placeholder="Full name" required />
+            <input id="email" placeholder="Email" required />
+            <input id="company" placeholder="Company (optional)" />
+            <textarea id="message" rows="5" placeholder="How can we help?" required></textarea>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+              <div class="muted">Or email us at vhnmediafb@gmail.com</div>
+              <button class="btn" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700">Book a free 20‑min audit</div>
+          <div class="muted" style="margin-top:8px">We'll run a quick review of your funnel and give actionable takeaways.</div>
+          <div style="margin-top:18px">
+            <a class="btn" href="#contact" onclick="openCalendar()">Book a slot</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>© VHN AGENCY • Built for conversion</div>
+        <div style="color:var(--muted)">Follow: @vhn_media</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const company = document.getElementById('company').value;
+      const message = document.getElementById('message').value;
+      // Simple client-side demo: open mailto with prefilled content
+      const subject = encodeURIComponent('Website inquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company + '\n\nMessage:\n' + message);
+      window.location.href = 'mailto:vhnmediafb@gmail.com?subject=' + subject + '&body=' + body;
+    }
+    function openCalendar(){
+      // placeholder - replace with Calendly/Tome booking link
+      window.open('https://calendly.com/vhnagency','_blank');
+    }
+  </script>
+</body>
 </html>
