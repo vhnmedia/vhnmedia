@@ -82,30 +82,38 @@
             <h2 class="text-4xl font-bold mb-4">Start Your Project</h2>
             <p class="text-zinc-400 mb-10">Ready to automate your growth? Send us a message.</p>
             
-            <form action="#" class="grid grid-cols-1 gap-6 text-left">
-                <div>
-                    <label class="block text-sm font-medium mb-2">Name</label>
-                    <input type="text" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="John Doe">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Business Email</label>
-                    <input type="email" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="john@business.com">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Service Needed</label>
-                    <select class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500 text-zinc-400">
-                        <option>Ads + AI Automation (Full Stack)</option>
-                        <option>AI Voice Agents</option>
-                        <option>AI Chatbots</option>
-                        <option>Web Design</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Message</label>
-                    <textarea rows="4" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="How can we help?"></textarea>
-                </div>
-                <button type="submit" class="blue-gradient py-4 rounded-lg font-bold text-lg mt-4">SEND MESSAGE</button>
-            </form>
+            <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 gap-6 text-left">
+
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+    <div>
+        <label class="block text-sm font-medium mb-2">Name</label>
+        <input type="text" name="name" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="John Doe">
+    </div>
+    <div>
+        <label class="block text-sm font-medium mb-2">Business Email</label>
+        <input type="email" name="email" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="john@business.com">
+    </div>
+    <div>
+        <label class="block text-sm font-medium mb-2">Service Needed</label>
+        <select name="service" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500 text-zinc-400">
+            <option>Ads + AI Automation (Full Stack)</option>
+            <option>AI Voice Agents</option>
+            <option>AI Chatbots</option>
+            <option>Web Design</option>
+        </select>
+    </div>
+    <div>
+        <label class="block text-sm font-medium mb-2">Message</label>
+        <textarea name="message" rows="4" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="How can we help?"></textarea>
+    </div>
+    
+    <input type="hidden" name="redirect" value="https://vhnmedia.vercel.app/thanks">
+
+    <button type="submit" class="blue-gradient py-4 rounded-lg font-bold text-lg mt-4 hover:opacity-90 transition">
+        SEND MESSAGE
+    </button>
+</form>
         </div>
     </section>
 
