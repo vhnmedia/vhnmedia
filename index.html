@@ -1,415 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VHN MEDIA | AI Receptionist & Meta Ads Agency</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #050509;
-      color: #eaeaea;
-      line-height: 1.6;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 8%;
-      background: rgba(5, 5, 9, 0.95);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(8px);
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      margin: 0 10px;
-      color: #eaeaea;
-      text-decoration: none;
-      font-size: 14px;
-      opacity: 0.85;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
-
-    .hero {
-      text-align: left;
-      padding: 110px 8% 80px;
-      background: radial-gradient(circle at top left, #1b2233 0, #050509 50%);
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-      max-width: 650px;
-    }
-
-    .hero p {
-      font-size: 16px;
-      max-width: 520px;
-      opacity: 0.85;
-    }
-
-    .cta-row {
-      margin-top: 26px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .cta-btn,
-    .secondary-btn {
-      display: inline-block;
-      padding: 11px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 14px;
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-
-    .cta-btn {
-      background: #0c7dff;
-      color: white;
-      font-weight: 600;
-    }
-
-    .cta-btn:hover {
-      background: #3795ff;
-    }
-
-    .secondary-btn {
-      background: transparent;
-      color: #eaeaea;
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .secondary-btn:hover {
-      border-color: rgba(255, 255, 255, 0.35);
-    }
-
-    section {
-      padding: 70px 8%;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-
-    section p.section-subtitle {
-      font-size: 14px;
-      opacity: 0.7;
-    }
-
-    .services {
-      display: flex;
-      gap: 22px;
-      justify-content: center;
-      margin-top: 32px;
-      flex-wrap: wrap;
-    }
-
-    .service-card,
-    .result-card,
-    .step {
-      background: linear-gradient(145deg, #101321, #070812);
-      border-radius: 14px;
-      padding: 20px 18px;
-      width: 100%;
-      max-width: 320px;
-      text-align: left;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .service-card h3,
-    .result-card h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .service-card p,
-    .result-card p,
-    .step {
-      font-size: 14px;
-      opacity: 0.85;
-    }
-
-    .process-steps,
-    .results-grid {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .step {
-      text-align: left;
-    }
-
-    .contact-section p {
-      margin-top: 10px;
-      font-size: 14px;
-      opacity: 0.75;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      max-width: 420px;
-      margin: 28px auto 0;
-      text-align: left;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 11px 12px;
-      background: #05060f;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 9px;
-      color: white;
-      font-size: 14px;
-    }
-
-    .contact-form textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      align-self: flex-start;
-      padding: 11px 24px;
-      background: #0c7dff;
-      color: white;
-      border: none;
-      border-radius: 999px;
-      font-size: 14px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .contact-form button:hover {
-      background: #3795ff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      background: #05060f;
-      margin-top: 40px;
-      font-size: 13px;
-      opacity: 0.7;
-    }
-
-    /* Fade-in animation */
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Floating WhatsApp button */
-
-    .whatsapp-float {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: #25d366;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-      z-index: 1100;
-    }
-
-    .whatsapp-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #ffffff;
-    }
-
-    .whatsapp-float:hover {
-      filter: brightness(1.08);
-    }
-
-    /* Responsive tweaks */
-
-    @media (max-width: 768px) {
-      .hero {
-        padding-top: 90px;
-      }
-      .hero h1 {
-        font-size: 30px;
-      }
-      nav {
-        display: none; /* keep it simple for now */
-      }
-      .service-card,
-      .result-card,
-      .step {
-        max-width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VHN MEDIA | AI Automation & Growth Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
+        .glow-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+        .blue-gradient { background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); }
+        .card-blur { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
 </head>
-<body>
-  <header class="navbar">
-    <div class="logo">VHN MEDIA</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#results">Results</a>
-      <a href="#contact">Contact</a>
+<body class="overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 py-6 px-10 flex justify-between items-center card-blur">
+        <img src="logo.jpg" alt="VHN MEDIA Logo" class="h-10">
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#services" class="hover:text-blue-400 transition">Services</a>
+            <a href="#results" class="hover:text-blue-400 transition">Results</a>
+            <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+        </div>
+        <a href="#contact" class="blue-gradient px-6 py-2 rounded-full font-bold text-sm tracking-wide">GET STARTED</a>
     </nav>
-  </header>
 
-  <section class="hero fade-in">
-  <h1 align="center">Build Systems That Answer, Convert & Book Your Customers — Automatically.</h1>
-  <p align="center">We help clinics and ecommerce brands replace missed calls, wasted ad spend & manual booking — using AI Receptionist and performance-driven Meta ads.</p>
-  <div class="cta-row">
-    <a href="#contact" class="cta-btn">Book Strategy Call</a>
-    <a href="https://wa.me/919601151323" target="_blank" class="secondary-btn">Chat on WhatsApp</a>
-  </div>
-</section>
-
-
-  <section id="services" class="services-section fade-in">
-    <h2>What We Do</h2>
-    <p class="section-subtitle">Two things. Done properly.</p>
-    <div class="services">
-      <div class="service-card">
-        <h3>AI Receptionist</h3>
-        <p>
-          Your calls answered 24/7. The AI receptionist speaks to customers, qualifies them, books into your calendar, sends confirmations and handles reschedules or cancellations — without adding staff.
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative pt-20">
+        <div class="absolute w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] -z-10"></div>
+        <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-6">
+            WE BUILD THE SYSTEMS <br> <span class="text-blue-500 glow-text">THAT SCALE BUSINESS</span>
+        </h1>
+        <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mb-10">
+            VHN MEDIA merges high-ROI advertising with cutting-edge AI automation. 
+            We build the AI agents that capture, qualify, and close your leads 24/7.
         </p>
-      </div>
-      <div class="service-card">
-        <h3>Meta Ads</h3>
-        <p>
-          Data-backed Meta campaigns that bring in real leads and buyers. Creative testing, audience optimisation and simple reporting — so you know exactly what your ad spend is doing.
-        </p>
-      </div>
-    </div>
-  </section>
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            <a href="#contact" class="blue-gradient px-10 py-4 rounded-lg font-bold text-lg hover:scale-105 transition">Book Your Free Audit</a>
+            <a href="#services" class="px-10 py-4 rounded-lg font-bold text-lg border border-zinc-700 hover:bg-zinc-900 transition">View Our Systems</a>
+        </div>
+    </section>
 
-  <section id="process" class="process-section fade-in">
-    <h2>Simple Process</h2>
-    <p class="section-subtitle">No fluff. Just four clear steps.</p>
-    <div class="process-steps">
-      <div class="step">1️⃣ Strategy call<br />We understand your offer, numbers and goals.</div>
-      <div class="step">2️⃣ Build & connect<br />We set up AI calls + tracking + ad structure.</div>
-      <div class="step">3️⃣ Launch & test<br />We run controlled tests and cut what doesn’t work.</div>
-      <div class="step">4️⃣ Scale what works<br />Increase volume on the winning angles & calls.</div>
-    </div>
-  </section>
+    <section id="services" class="py-24 px-10 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center">Our Core Growth Pillars</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-blur p-8 rounded-2xl hover:border-blue-500 transition duration-500">
+                <div class="w-12 h-12 blue-gradient rounded-lg mb-6 flex items-center justify-center font-bold italic">ADS</div>
+                <h3 class="text-2xl font-bold mb-4">Paid Acquisition</h3>
+                <p class="text-zinc-400">Precision-targeted Meta & Google ads designed for local service dominance and E-commerce scaling.</p>
+            </div>
+            <div class="card-blur p-8 rounded-2xl hover:border-blue-500 transition duration-500">
+                <div class="w-12 h-12 blue-gradient rounded-lg mb-6 flex items-center justify-center font-bold italic">VOX</div>
+                <h3 class="text-2xl font-bold mb-4">AI Voice Agents</h3>
+                <p class="text-zinc-400">Human-grade AI callers that handle your outbound prospecting and inbound bookings 24/7 with zero latency.</p>
+            </div>
+            <div class="card-blur p-8 rounded-2xl hover:border-blue-500 transition duration-500">
+                <div class="w-12 h-12 blue-gradient rounded-lg mb-6 flex items-center justify-center font-bold italic">BOT</div>
+                <h3 class="text-2xl font-bold mb-4">Autonomous Chatbots</h3>
+                <p class="text-zinc-400">Custom-trained LLMs that qualify leads on your site and sync them directly to your CRM without lifting a finger.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="results" class="results-section fade-in">
-    <h2>Example Outcomes</h2>
-    <p class="section-subtitle">Results vary — systems stay.</p>
-    <div class="results-grid">
-      <div class="result-card">
-        <h3>Clinic</h3>
-        <p>Switched from missed calls to 24/7 AI answering and added 10+ booked consults in the first week.</p>
-      </div>
-      <div class="result-card">
-        <h3>Local Service</h3>
-        <p>32 extra bookings in a month without hiring another receptionist or extending hours.</p>
-      </div>
-      <div class="result-card">
-        <h3>Online Brand</h3>
-        <p>Improved Meta ads to reach a 4.3x return on ad spend with consistent creative testing.</p>
-      </div>
-    </div>
-  </section>
+    <section id="results" class="py-24 bg-zinc-950 px-10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center">2025 Case Studies</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="border-l-4 border-blue-500 pl-8">
+                    <h4 class="text-blue-500 font-bold tracking-widest text-sm uppercase mb-2">Automation Result</h4>
+                    <p class="text-2xl font-semibold italic text-white leading-snug">"Integrated AI Voice Agents for local service clients, reducing speed-to-lead to under 10 seconds."</p>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-8">
+                    <h4 class="text-blue-500 font-bold tracking-widest text-sm uppercase mb-2">Efficiency Result</h4>
+                    <p class="text-2xl font-semibold italic text-white leading-snug">"Custom chatbots successfully handling 90% of routine customer queries, saving 20+ hours per week."</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact" class="contact-section fade-in">
-    <h2>Tell Us About Your Business</h2>
-    <p>We’ll reply with whether we can help, and what it would look like.</p>
-   <form class="contact-form" action="https://formsubmit.co/vhnagency@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://wa.me/919601151323">
+    <section id="contact" class="py-24 px-10 max-w-4xl mx-auto">
+        <div class="card-blur p-12 rounded-3xl text-center">
+            <h2 class="text-4xl font-bold mb-4">Start Your Project</h2>
+            <p class="text-zinc-400 mb-10">Ready to automate your growth? Send us a message.</p>
+            
+            <form action="#" class="grid grid-cols-1 gap-6 text-left">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Name</label>
+                    <input type="text" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Business Email</label>
+                    <input type="email" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="john@business.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Service Needed</label>
+                    <select class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500 text-zinc-400">
+                        <option>Ads + AI Automation (Full Stack)</option>
+                        <option>AI Voice Agents</option>
+                        <option>AI Chatbots</option>
+                        <option>Web Design</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Message</label>
+                    <textarea rows="4" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="How can we help?"></textarea>
+                </div>
+                <button type="submit" class="blue-gradient py-4 rounded-lg font-bold text-lg mt-4">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
 
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Tell us about your business..." required></textarea>
+    <footer class="py-12 px-10 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0 text-center md:text-left">
+                <img src="logo.jpg" alt="VHN MEDIA" class="h-8 mb-4 mx-auto md:mx-0">
+                <p class="text-zinc-500">The Future of Business Automation.</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end text-zinc-400">
+                <a href="tel:+919601151323" class="hover:text-blue-500 transition mb-2 tracking-widest">+91 9601151323</a>
+                <a href="https://instagram.com/vhn_media" target="_blank" class="hover:text-blue-500 transition tracking-widest underline italic">@vhn_media</a>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-zinc-600 text-xs">
+            © 2025 VHN MEDIA. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
 
-    <button type="submit">Send Message</button>
-</form>
-
-  </section>
-
-  <footer>
-    <p>© 2025 VHN MEDIA — All Rights Reserved</p>
-  </footer>
-
-  <!-- Floating WhatsApp button -->
-  <a href="https://wa.me/919601151323" target="_blank" class="whatsapp-float">
-    <span class="whatsapp-dot"></span>
-    Chat on WhatsApp
-  </a>
-
-  <script>
-    // Fade-in on scroll using IntersectionObserver
-    const faders = document.querySelectorAll(".fade-in");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    faders.forEach((el) => observer.observe(el));
-
-    // Simple contact form handler
-    const form = document.querySelector(".contact-form");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Thanks! We'll get back to you shortly.");
-      form.reset();
-    });
-  </script>
 </body>
 </html>
