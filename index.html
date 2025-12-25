@@ -3,135 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VHN MEDIA | AI Automation & Growth Agency</title>
+    <title>VHN MEDIA | ROI-Driven AI Systems</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
-        .glow-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
-        .blue-gradient { background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); }
-        .card-blur { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        body { background-color: #000; color: #fff; font-family: 'Space Grotesk', sans-serif; scroll-behavior: smooth; }
+        .glass-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .accent-blue { color: #007cf0; }
+        .bg-blue-gradient { background: linear-gradient(135deg, #007cf0 0%, #00dfd8 100%); }
+        input[type=range] { -webkit-appearance: none; width: 100%; background: #222; height: 4px; border-radius: 5px; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 18px; width: 18px; border-radius: 50%; background: #007cf0; cursor: pointer; box-shadow: 0 0 10px #007cf0; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 py-6 px-10 flex justify-between items-center card-blur">
-        <img src="logo.jpg" alt="VHN MEDIA Logo" class="h-10">
-        <div class="hidden md:flex space-x-8 font-medium">
-            <a href="#services" class="hover:text-blue-400 transition">Services</a>
-            <a href="#results" class="hover:text-blue-400 transition">Results</a>
-            <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+    <nav class="fixed w-full z-50 py-6 px-10 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+        <img src="logo.jpg" alt="VHN MEDIA" class="h-8 md:h-10">
+        <div class="hidden md:flex space-x-12 text-[10px] font-bold tracking-[0.4em] uppercase text-zinc-500">
+            <a href="#calculator" class="hover:text-white transition">ROI Calculator</a>
+            <a href="#services" class="hover:text-white transition">Systems</a>
+            <a href="#contact" class="hover:text-white transition">Apply</a>
         </div>
-        <a href="#contact" class="blue-gradient px-6 py-2 rounded-full font-bold text-sm tracking-wide">GET STARTED</a>
+        <a href="#contact" class="text-[10px] font-bold tracking-widest border border-white px-5 py-2 hover:bg-white hover:text-black transition uppercase">Audit</a>
     </nav>
 
-    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative pt-20">
-        <div class="absolute w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] -z-10"></div>
-        <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-6">
-            WE BUILD THE SYSTEMS <br> <span class="text-blue-500 glow-text">THAT SCALE BUSINESS</span>
-        </h1>
-        <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mb-10">
-            VHN MEDIA merges high-ROI advertising with cutting-edge AI automation. 
-            We build the AI agents that capture, qualify, and close your leads 24/7.
-        </p>
-        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <a href="#contact" class="blue-gradient px-10 py-4 rounded-lg font-bold text-lg hover:scale-105 transition">Book Your Free Audit</a>
-            <a href="#services" class="px-10 py-4 rounded-lg font-bold text-lg border border-zinc-700 hover:bg-zinc-900 transition">View Our Systems</a>
+    <section class="h-screen flex flex-col justify-center px-10 md:px-24">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-6xl md:text-[10rem] font-bold leading-[0.9] tracking-tighter mb-8">
+                STOP PAYING<br>FOR SLOW.
+            </h1>
+            <p class="text-zinc-500 text-xl md:text-2xl max-w-2xl mb-12 font-light">
+                VHN Media installs AI sales infrastructure that responds in seconds, not hours. 
+                <span class="text-white">Ads. Voice. WhatsApp. Growth.</span>
+            </p>
+            <a href="#calculator" class="inline-block bg-[#007cf0] text-white px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:scale-105 transition-transform">Calculate Your Savings</a>
         </div>
     </section>
 
-    <section id="services" class="py-24 px-10 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold mb-16 text-center">Our Core Growth Pillars</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="card-blur p-8 rounded-2xl hover:border-blue-500 transition duration-500">
-                <div class="w-12 h-12 blue-gradient rounded-lg mb-6 flex items-center justify-center font-bold italic">ADS</div>
-                <h3 class="text-2xl font-bold mb-4">Paid Acquisition</h3>
-                <p class="text-zinc-400">Precision-targeted Meta & Google ads designed for local service dominance and E-commerce scaling.</p>
+    <section id="calculator" class="py-32 px-10 md:px-24 bg-zinc-950">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">THE COST OF HUMAN ERROR</h2>
+                <p class="text-zinc-500 uppercase tracking-widest text-xs">AI vs Human Salary Comparison</p>
             </div>
-            <div class="card-blur p-8 rounded-2xl hover:border-blue-500 transition duration-500">
-                <div class="w-12 h-12 blue-gradient rounded-lg mb-6 flex items-center justify-center font-bold italic">VOX</div>
-                <h3 class="text-2xl font-bold mb-4">AI Voice Agents</h3>
-                <p class="text-zinc-400">Human-grade AI callers that handle your outbound prospecting and inbound bookings 24/7 with zero latency.</p>
-            </div>
-            <div class="card-blur p-8 rounded-2xl hover:border-blue-500 transition duration-500">
-                <div class="w-12 h-12 blue-gradient rounded-lg mb-6 flex items-center justify-center font-bold italic">BOT</div>
-                <h3 class="text-2xl font-bold mb-4">Autonomous Chatbots</h3>
-                <p class="text-zinc-400">Custom-trained LLMs that qualify leads on your site and sync them directly to your CRM without lifting a finger.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="results" class="py-24 bg-zinc-950 px-10">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold mb-16 text-center">2025 Case Studies</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="border-l-4 border-blue-500 pl-8">
-                    <h4 class="text-blue-500 font-bold tracking-widest text-sm uppercase mb-2">Automation Result</h4>
-                    <p class="text-2xl font-semibold italic text-white leading-snug">"Integrated AI Voice Agents for local service clients, reducing speed-to-lead to under 10 seconds."</p>
+            <div class="glass-panel p-8 md:p-12 rounded-[30px] grid md:grid-cols-2 gap-16">
+                <div class="space-y-10">
+                    <div>
+                        <label class="block text-sm font-bold tracking-widest mb-4 uppercase text-zinc-400">Monthly Human Salary ($)</label>
+                        <input type="range" id="salaryRange" min="1000" max="10000" value="3500" class="mb-2">
+                        <div class="flex justify-between font-bold text-cyan-500"><span>$1,000</span><span id="salaryVal">$3,500</span><span>$10,000</span></div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold tracking-widest mb-4 uppercase text-zinc-400">Missed Leads Per Month</label>
+                        <input type="range" id="leadsRange" min="5" max="100" value="20" class="mb-2">
+                        <div class="flex justify-between font-bold text-cyan-500"><span>5</span><span id="leadsVal">20</span><span>100</span></div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold tracking-widest mb-4 uppercase text-zinc-400">Avg. Sale Value ($)</label>
+                        <input type="range" id="saleRange" min="100" max="5000" value="500" class="mb-2">
+                        <div class="flex justify-between font-bold text-cyan-500"><span>$100</span><span id="saleVal">$500</span><span>$5,000</span></div>
+                    </div>
                 </div>
-                <div class="border-l-4 border-blue-500 pl-8">
-                    <h4 class="text-blue-500 font-bold tracking-widest text-sm uppercase mb-2">Efficiency Result</h4>
-                    <p class="text-2xl font-semibold italic text-white leading-snug">"Custom chatbots successfully handling 90% of routine customer queries, saving 20+ hours per week."</p>
+
+                <div class="flex flex-col justify-center items-center text-center bg-white/5 rounded-2xl p-8 border border-white/10">
+                    <h3 class="text-zinc-500 text-xs font-bold tracking-widest uppercase mb-4">Total Monthly Leakage</h3>
+                    <div class="text-6xl md:text-8xl font-black text-white mb-4" id="totalWaste">$13,500</div>
+                    <p class="text-zinc-400 text-sm leading-relaxed italic">
+                        "This is the money you lose every month to human overhead and missed follow-ups. VHN AI stops the leak."
+                    </p>
+                    <a href="#contact" class="mt-8 bg-white text-black px-8 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-[#007cf0] hover:text-white transition">Fix This Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-10 max-w-4xl mx-auto">
-        <div class="card-blur p-12 rounded-3xl text-center">
-            <h2 class="text-4xl font-bold mb-4">Start Your Project</h2>
-            <p class="text-zinc-400 mb-10">Ready to automate your growth? Send us a message.</p>
-            
-            <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 gap-6 text-left">
-
-    <input type="hidden" name="access_key" value="3ffe76e1-174e-49a8-9fd5-f246f645be76">
-
-    <div>
-        <label class="block text-sm font-medium mb-2">Name</label>
-        <input type="text" name="name" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="John Doe">
-    </div>
-    <div>
-        <label class="block text-sm font-medium mb-2">Business Email</label>
-        <input type="email" name="email" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="john@business.com">
-    </div>
-    <div>
-        <label class="block text-sm font-medium mb-2">Service Needed</label>
-        <select name="service" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500 text-zinc-400">
-            <option>Ads + AI Automation (Full Stack)</option>
-            <option>AI Voice Agents</option>
-            <option>AI Chatbots</option>
-            <option>Web Design</option>
-        </select>
-    </div>
-    <div>
-        <label class="block text-sm font-medium mb-2">Message</label>
-        <textarea name="message" rows="4" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-4 focus:outline-none focus:border-blue-500" placeholder="How can we help?"></textarea>
-    </div>
-    
-    <input type="hidden" name="redirect" value="https://vhnmedia.vercel.app/thanks">
-
-    <button type="submit" class="blue-gradient py-4 rounded-lg font-bold text-lg mt-4 hover:opacity-90 transition">
-        SEND MESSAGE
-    </button>
-</form>
+    <section id="services" class="py-32 px-10 md:px-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div data-aos="fade-up">
+                <h3 class="text-3xl font-bold mb-4">Meta Ads + AI Nurture</h3>
+                <p class="text-zinc-500">We don't just send traffic to a dead website. We send traffic into a WhatsApp AI engine that closes the deal for you.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-3xl font-bold mb-4">24/7 Voice Reception</h3>
+                <p class="text-zinc-500">A human-sounding AI that handles all inbound inquiries, qualifies the caller, and books them into your Google Calendar.</p>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 px-10 border-t border-zinc-900">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-8 md:mb-0 text-center md:text-left">
-                <img src="logo.jpg" alt="VHN MEDIA" class="h-8 mb-4 mx-auto md:mx-0">
-                <p class="text-zinc-500">The Future of Business Automation.</p>
+    <section id="contact" class="py-32 px-10 md:px-24 border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-5xl font-bold mb-4 uppercase">Initialize Audit</h2>
+                <p class="text-zinc-500">Only for businesses generating $10k+/mo or ready to scale aggressively.</p>
             </div>
-            <div class="flex flex-col items-center md:items-end text-zinc-400">
-                <a href="tel:+919601151323" class="hover:text-blue-500 transition mb-2 tracking-widest">+91 9601151323</a>
-                <a href="https://instagram.com/vhn_media" target="_blank" class="hover:text-blue-500 transition tracking-widest underline italic">@vhn_media</a>
-            </div>
+
+            <form name="vhn-audit-v2" method="POST" data-netlify="true" class="space-y-6">
+                <input type="hidden" name="form-name" value="vhn-audit-v2">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="name" required placeholder="Full Name" class="w-full p-6 bg-transparent border-white/10 border outline-none text-xs tracking-widest focus:border-[#007cf0]">
+                    <input type="email" name="email" required placeholder="Business Email" class="w-full p-6 bg-transparent border-white/10 border outline-none text-xs tracking-widest focus:border-[#007cf0]">
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <select name="revenue" required class="w-full p-6 bg-transparent border-white/10 border outline-none text-xs tracking-widest text-zinc-500">
+                        <option value="" disabled selected>CURRENT MONTHLY REVENUE</option>
+                        <option value="0-5k">$0 - $5,000</option>
+                        <option value="5-20k">$5,000 - $20,000</option>
+                        <option value="20-50k">$20,000 - $50,000</option>
+                        <option value="50k+">$50,000+</option>
+                    </select>
+                    <select name="system" required class="w-full p-6 bg-transparent border-white/10 border outline-none text-xs tracking-widest text-zinc-500">
+                        <option value="" disabled selected>SYSTEM INTEREST</option>
+                        <option value="ads">Meta Ads + Traffic</option>
+                        <option value="voice">AI Voice Agent</option>
+                        <option value="whatsapp">WhatsApp / Site Bot</option>
+                        <option value="full">Full Ecosystem Build</option>
+                    </select>
+                </div>
+
+                <textarea name="message" rows="4" placeholder="HOW CAN WE HELP YOU SCALE?" class="w-full p-6 bg-transparent border-white/10 border outline-none text-xs tracking-widest focus:border-[#007cf0]"></textarea>
+                
+                <button type="submit" class="w-full bg-[#007cf0] text-white py-6 font-bold text-xs tracking-[0.4em] uppercase hover:bg-white hover:text-black transition">Submit Application</button>
+            </form>
         </div>
-        <div class="text-center mt-12 text-zinc-600 text-xs">
-            © 2025 VHN MEDIA. ALL RIGHTS RESERVED.
-        </div>
+    </section>
+
+    <footer class="py-12 px-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+        <img src="logo.jpg" alt="VHN MEDIA" class="h-6 grayscale opacity-30 mb-6 md:mb-0">
+        <p class="text-zinc-700 text-[10px] tracking-[0.5em] font-bold uppercase">© 2025 VHN MEDIA | INSTA: @vhn_media</p>
     </footer>
 
+    <script>
+        AOS.init({ once: true });
+
+        // ROI Calculator Logic
+        const salaryRange = document.getElementById('salaryRange');
+        const leadsRange = document.getElementById('leadsRange');
+        const saleRange = document.getElementById('saleRange');
+        const totalDisplay = document.getElementById('totalWaste');
+
+        function updateROI() {
+            const salary = parseInt(salaryRange.value);
+            const leads = parseInt(leadsRange.value);
+            const sale = parseInt(saleRange.value);
+            
+            document.getElementById('salaryVal').innerText = `$${salary.toLocaleString()}`;
+            document.getElementById('leadsVal').innerText = leads;
+            document.getElementById('saleVal').innerText = `$${sale.toLocaleString()}`;
+
+            // Calculation: Salary + (Missed Leads * Sale Value)
+            const waste = salary + (leads * sale);
+            totalDisplay.innerText = `$${waste.toLocaleString()}`;
+        }
+
+        [salaryRange, leadsRange, saleRange].forEach(el => el.addEventListener('input', updateROI));
+    </script>
 </body>
 </html>
