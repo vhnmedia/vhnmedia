@@ -3,142 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VHN MEDIA | Book Your AI Audit</title>
+    <title>VHN Media | Premium Ads & AI Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
-        body { background-color: #000; color: #fff; font-family: 'Space Grotesk', sans-serif; scroll-behavior: smooth; }
-        .glass-panel { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
-        .bg-blue-gradient { background: linear-gradient(135deg, #007cf0 0%, #00dfd8 100%); }
-        input[type=range] { -webkit-appearance: none; width: 100%; background: #222; height: 4px; border-radius: 5px; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 18px; width: 18px; border-radius: 50%; background: #007cf0; cursor: pointer; box-shadow: 0 0 15px #007cf0; }
-        .stat-glow { text-shadow: 0 0 20px rgba(0, 124, 240, 0.5); }
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(90deg, #60A5FA, #34D399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="bg-[#0a0a0a] text-white">
 
-    <nav class="fixed w-full z-50 py-6 px-10 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
-        <img src="logo.jpg" alt="VHN MEDIA" class="h-8 md:h-10">
-        <div class="hidden md:flex space-x-12 text-[10px] font-bold tracking-[0.4em] uppercase text-zinc-500">
-            <a href="#calculator" class="hover:text-white transition">ROI Gap</a>
-            <a href="#services" class="hover:text-white transition">Systems</a>
-            <a href="#book" class="hover:text-white transition text-cyan-500">Book Meeting</a>
+    <nav class="fixed w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="logo.jpg" alt="VHN Media" class="h-10">
+            <a href="https://calendly.com/vhnmedia" class="bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-gray-200 transition">Book Strategy Call</a>
         </div>
-        <a href="#book" class="text-[10px] font-bold tracking-widest border border-white px-5 py-2 hover:bg-white hover:text-black transition uppercase">Schedule Call</a>
     </nav>
 
-    <section class="h-screen flex flex-col justify-center px-10 md:px-24">
-        <div data-aos="fade-up">
-            <h1 class="text-6xl md:text-[10rem] font-bold leading-[0.9] tracking-tighter mb-8">
-                SCALE WITH <br><span class="text-white">PRECISION.</span>
-            </h1>
-            <p class="text-zinc-500 text-xl md:text-2xl max-w-2xl mb-12 font-light">
-                High-ticket AI infrastructure for modern brands. We solve the lead-response problem forever.
-            </p>
-            <div class="flex flex-col md:flex-row gap-6">
-                <a href="#book" class="bg-[#007cf0] text-white px-10 py-5 text-xs font-bold tracking-[0.2em] uppercase hover:scale-105 transition-transform text-center">Book Your Audit</a>
-                <a href="#calculator" class="border border-white/20 text-white px-10 py-5 text-xs font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-black transition text-center">See Savings</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="calculator" class="py-32 px-10 md:px-24 bg-zinc-950">
+    <section class="pt-40 pb-20 px-6 text-center">
         <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-6xl font-bold mb-4 italic">THE PROFIT GAP</h2>
-                <p class="text-zinc-500 uppercase tracking-widest text-xs">Human Error is Costing You Money</p>
+            <span class="text-blue-500 font-mono tracking-widest uppercase text-sm mb-4 block">VHN MEDIA AGENCY</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight">
+                Stop Losing Leads. <br> <span class="gradient-text">Start Scaling Revenue.</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                We deploy high-performance ad campaigns and custom AI Voice Agents to ensure your E-com brand or local business never misses a sale again. 
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="https://calendly.com/vhnmedia" class="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 rounded-xl text-xl font-bold transition shadow-lg shadow-blue-500/20">
+                    Secure Your Growth Call
+                </a>
             </div>
+        </div>
+    </section>
 
-            <div class="glass-panel p-8 md:p-12 rounded-[30px] grid md:grid-cols-2 gap-16" data-aos="zoom-in">
-                <div class="space-y-10">
-                    <div>
-                        <label class="block text-sm font-bold tracking-widest mb-4 uppercase text-zinc-400">Monthly Human Salary ($)</label>
-                        <input type="range" id="salaryRange" min="1000" max="10000" value="3500">
-                        <div class="flex justify-between font-bold text-cyan-500 mt-2"><span>$1,000</span><span id="salaryVal">$3,500</span><span>$10,000</span></div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold tracking-widest mb-4 uppercase text-zinc-400">Missed Leads Per Month</label>
-                        <input type="range" id="leadsRange" min="5" max="100" value="20">
-                        <div class="flex justify-between font-bold text-cyan-500 mt-2"><span>5</span><span id="leadsVal">20</span><span>100</span></div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold tracking-widest mb-4 uppercase text-zinc-400">Avg. Sale Value ($)</label>
-                        <input type="range" id="saleRange" min="100" max="5000" value="500">
-                        <div class="flex justify-between font-bold text-cyan-500 mt-2"><span>$100</span><span id="saleVal">$500</span><span>$5,000</span></div>
-                    </div>
+    <section class="py-24 bg-[#111] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16">Traditional Marketing is Broken. <br> <span class="text-gray-500">We fixed it with AI.</span></h2>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="p-8 bg-black rounded-2xl border border-white/5">
+                    <div class="text-red-500 mb-4 font-bold text-xl">01. Ghosted Leads</div>
+                    <p class="text-gray-400">Local businesses lose 60% of revenue because they can't answer the phone in time. Our AI agents answer instantly.</p>
                 </div>
-
-                <div class="flex flex-col justify-center items-center text-center bg-white/5 rounded-2xl p-8 border border-white/10">
-                    <h3 class="text-zinc-500 text-xs font-bold tracking-widest uppercase mb-4">Total Monthly Revenue Leak</h3>
-                    <div class="text-6xl md:text-8xl font-black text-white mb-4 stat-glow" id="totalWaste">$13,500</div>
-                    <p class="text-zinc-400 text-sm leading-relaxed italic mb-8">
-                        "Your current setup is leaking capital. Our AI closes this gap in 48 hours."
-                    </p>
-                    <a href="#book" class="w-full bg-white text-black py-4 text-[10px] font-black uppercase tracking-widest hover:bg-[#007cf0] hover:text-white transition">Stop the Leak</a>
+                <div class="p-8 bg-black rounded-2xl border border-white/5">
+                    <div class="text-red-500 mb-4 font-bold text-xl">02. Expensive Ad Spend</div>
+                    <p class="text-gray-400">E-com brands burn money on ads that don't convert. We focus on ROAS and data-driven scaling.</p>
+                </div>
+                <div class="p-8 bg-black rounded-2xl border border-white/5">
+                    <div class="text-red-500 mb-4 font-bold text-xl">03. Human Error</div>
+                    <p class="text-gray-400">Humans get tired. Our AI Voice Agents work 24/7/365 with the same high energy and perfect pitch every time.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-32 px-10 md:px-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div data-aos="fade-right">
-                <h3 class="text-4xl font-bold mb-6 italic">24/7 Voice AI</h3>
-                <p class="text-zinc-500 text-lg leading-relaxed">Stop letting calls go to voicemail. Our Voice Agents handle inquiries, qualify customers, and book your meetings while you sleep.</p>
-            </div>
-            <div data-aos="fade-left">
-                <h3 class="text-4xl font-bold mb-6 italic">Meta & Google Traffic</h3>
-                <p class="text-zinc-500 text-lg leading-relaxed">Aggressive acquisition strategies designed to feed the AI ecosystem with high-intent prospects every single day.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="book" class="py-32 px-10 md:px-24 border-t border-white/5 bg-zinc-950">
-        <div class="max-w-6xl mx-auto flex flex-col items-center">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-5xl md:text-7xl font-bold mb-4 italic">BOOK THE AUDIT</h2>
-                <p class="text-zinc-500 uppercase tracking-widest text-xs">Direct 15-30 Minute Strategy Call</p>
-            </div>
-            
-            <div class="w-full glass-panel rounded-[40px] overflow-hidden" style="min-width:320px;height:700px;" data-aos="zoom-in">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/vhnmedia?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=000000&text_color=ffffff&primary_color=007cf0" style="min-width:320px;height:700px;"></div>
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">High-Performance <br>Paid Advertising</h2>
+                    <p class="text-gray-400 text-lg mb-8">We don't just "run ads." We build full-funnel ecosystems for E-com and local services. From creative strategy to technical tracking, we ensure every dollar spent returns a profit.</p>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center">✅ Meta & Google Ads Mastery</li>
+                        <li class="flex items-center">✅ High-Converting Landing Pages</li>
+                        <li class="flex items-center">✅ Detailed Analytics & Reporting</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-600/10 p-12 rounded-3xl border border-blue-500/20">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full mb-6"></div>
+                    <h3 class="text-3xl font-bold mb-4 italic">"The ROI Engine"</h3>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 border-t border-white/5 text-center">
-        <img src="logo.jpg" alt="VHN MEDIA" class="h-6 grayscale opacity-20 mx-auto mb-10">
-        <div class="flex justify-center space-x-10 text-[10px] tracking-[0.4em] font-bold text-zinc-700 uppercase">
-            <a href="tel:+919601151323" class="hover:text-white">+91 9601151323</a>
-            <a href="https://instagram.com/vhn_media" class="hover:text-white">Instagram</a>
+    <section class="py-24 px-6 bg-blue-900/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="order-2 md:order-1 bg-emerald-500/10 p-12 rounded-3xl border border-emerald-500/20 text-right">
+                    <div class="w-16 h-16 bg-emerald-500 rounded-full mb-6 ml-auto"></div>
+                    <h3 class="text-3xl font-bold mb-4 italic">"The 24/7 Closer"</h3>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-4xl font-bold mb-6">AI Voice Agents <br>That Close Deals</h2>
+                    <p class="text-gray-400 text-lg mb-8">Stop letting leads go to voicemail. Our AI Voice Agents sound human, handle objections, and book appointments directly into your calendar while you sleep.</p>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center justify-end">Inbound Lead Handling ✅</li>
+                        <li class="flex items-center justify-end">Outbound Appointment Setting ✅</li>
+                        <li class="flex items-center justify-end">Seamless CRM Integration ✅</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 text-center border-t border-white/5">
+        <h2 class="text-5xl font-bold mb-8">Ready for Hypergrowth?</h2>
+        <p class="text-xl text-gray-400 mb-12">Book a 15-minute demo to see how we can automate your sales process.</p>
+        <a href="https://calendly.com/vhnmedia" class="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 rounded-xl text-xl font-bold transition">
+            Book My Call Now
+        </a>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-left">
+                <img src="logo.jpg" alt="VHN Media" class="h-8 mb-4">
+                <p class="text-gray-500">Email: vhnagency@gmail.com</p>
+                <p class="text-gray-500">WhatsApp: +91 9601151323</p>
+            </div>
+            <div class="text-center">
+                <a href="https://instagram.com/vhn_media" class="text-xl text-gray-400 hover:text-white transition italic">@vhn_media</a>
+            </div>
+            <p class="text-gray-600 text-sm">&copy; 2026 VHN Media. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script>
-        AOS.init({ once: true });
-
-        // ROI Calculator Logic
-        const salaryRange = document.getElementById('salaryRange');
-        const leadsRange = document.getElementById('leadsRange');
-        const saleRange = document.getElementById('saleRange');
-        const totalDisplay = document.getElementById('totalWaste');
-
-        function updateROI() {
-            const salary = parseInt(salaryRange.value);
-            const leads = parseInt(leadsRange.value);
-            const sale = parseInt(saleRange.value);
-            document.getElementById('salaryVal').innerText = `$${salary.toLocaleString()}`;
-            document.getElementById('leadsVal').innerText = leads;
-            document.getElementById('saleVal').innerText = `$${sale.toLocaleString()}`;
-            const waste = salary + (leads * sale);
-            totalDisplay.innerText = `$${waste.toLocaleString()}`;
-        }
-
-        [salaryRange, leadsRange, saleRange].forEach(el => el.addEventListener('input', updateROI));
-    </script>
 </body>
 </html>
