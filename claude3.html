@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Family Dental — Family Dental Clinic in Attapur, Hyderabad</title>
+<meta name="description" content="Elite Family Dental is a warm, family-run dental clinic in Attapur, Hyderabad led by Dr. Sanganand & Dr. Nithya Gavle. Root canals, braces, implants, kids' dentistry & more — gentle, judgment-free care for every age since 2019.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF3E6;
+    --cream-2:#F6EBDA;
+    --coral:#FF8A65;
+    --coral-dark:#F16B45;
+    --sage:#8FAE8B;
+    --sage-dark:#6F9A6B;
+    --sky:#8FC4D8;
+    --brown:#4A3529;
+    --brown-soft:#6B5647;
+    --white:#FFFDF9;
+    --radius-lg: 2rem;
+    --radius-xl: 3rem;
+    --shadow-soft: 0 12px 30px -12px rgba(74,53,41,0.18);
+    --wrap: 1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Nunito', sans-serif;
+    background:var(--cream);
+    color:var(--brown);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    color:var(--brown);
+    margin:0 0 0.5em;
+    line-height:1.2;
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px;}
+  section{position:relative; padding:88px 0; overflow:hidden;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;font-size:.78rem;
+    color:var(--coral-dark); background:rgba(255,138,101,0.12);
+    padding:6px 16px;border-radius:999px;margin-bottom:16px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:.98rem;
+    padding:14px 28px;border-radius:999px;border:none;cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--coral); color:var(--white); box-shadow:0 10px 24px -8px rgba(241,107,69,0.55);}
+  .btn-primary:hover{background:var(--coral-dark);}
+  .btn-outline{background:var(--white); color:var(--brown); border:2px solid var(--cream-2); box-shadow:var(--shadow-soft);}
+  .btn-outline:hover{border-color:var(--sage);}
+  .btn-sage{background:var(--sage); color:var(--white); box-shadow:0 10px 24px -8px rgba(111,154,107,0.5);}
+  .btn-sage:hover{background:var(--sage-dark);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(251,243,230,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(74,53,41,0.06);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:var(--wrap); margin:0 auto; padding:16px 24px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:1.25rem;color:var(--brown);
+  }
+  .logo .tooth-mark{
+    width:38px;height:38px;border-radius:50%;background:var(--coral);
+    display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;
+  }
+  .nav-links{display:flex; align-items:center; gap:34px; list-style:none; margin:0; padding:0;}
+  .nav-links a{font-weight:700; font-family:'Quicksand',sans-serif; font-size:.96rem; color:var(--brown-soft); position:relative; padding:4px 0;}
+  .nav-links a:hover{color:var(--coral-dark);}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;}
+  .hamburger span{width:26px;height:3px;border-radius:3px;background:var(--brown);}
+  .mobile-panel{display:none; flex-direction:column; gap:2px; background:var(--white); padding:12px 24px 20px; border-top:1px solid var(--cream-2);}
+  .mobile-panel a{padding:12px 4px; font-family:'Quicksand',sans-serif; font-weight:700; color:var(--brown-soft); border-bottom:1px solid var(--cream-2);}
+  .mobile-panel.open{display:flex;}
+
+  /* ---------- decorative blobs ---------- */
+  .blob{position:absolute; z-index:0; filter:blur(0px); opacity:.9;}
+  .blob-svg path{transition:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding-top:64px; padding-bottom:70px;}
+  .hero .wrap{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; position:relative; z-index:2;}
+  .hero h1{font-size:clamp(2.1rem, 4vw, 3.15rem); margin-bottom:.4em;}
+  .hero h1 .accent{color:var(--coral-dark); position:relative; white-space:nowrap;}
+  .hero-sub{font-size:1.08rem; color:var(--brown-soft); max-width:480px; margin-bottom:1.6em;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-stats-row{display:flex; gap:28px; margin-top:36px; flex-wrap:wrap;}
+  .hero-stats-row .stat b{display:block; font-family:'Quicksand',sans-serif; font-size:1.3rem; color:var(--coral-dark);}
+  .hero-stats-row .stat span{font-size:.82rem; color:var(--brown-soft);}
+  .hero-media{position:relative;}
+  .hero-media .blob-shape{
+    position:absolute; inset:-6%; z-index:0;
+    background:var(--sage); opacity:.35;
+    border-radius:63% 37% 54% 46% / 45% 41% 59% 55%;
+  }
+  .hero-media .frame{
+    position:relative; z-index:1;
+    border-radius:52% 48% 60% 40% / 55% 45% 55% 45%;
+    overflow:hidden; aspect-ratio:1/1.02;
+    box-shadow:var(--shadow-soft);
+    border:6px solid var(--white);
+  }
+  .hero-media img{width:100%;height:100%;object-fit:cover;}
+  .badge-float{
+    position:absolute; z-index:2; background:var(--white); border-radius:20px;
+    box-shadow:var(--shadow-soft); padding:12px 18px; display:flex; align-items:center; gap:10px;
+    font-family:'Quicksand',sans-serif; font-weight:700; font-size:.85rem;
+  }
+  .badge-float.b1{ top:8%; left:-8%; }
+  .badge-float.b2{ bottom:6%; right:-6%; }
+  .badge-float .em{font-size:1.4rem;}
+
+  /* ---------- placeholder image ---------- */
+  .imgph{
+    width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, var(--cream-2), #EFE1CB);
+    color:var(--brown-soft); text-align:center; padding:16px; gap:6px;
+  }
+  .imgph .em{font-size:2rem;}
+  .imgph .fn{font-family:'Quicksand',sans-serif; font-weight:700; font-size:.72rem; opacity:.65; letter-spacing:.02em;}
+
+  /* ---------- SECTION HEAD ---------- */
+  .section-head{text-align:center; max-width:640px; margin:0 auto 52px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.35rem);}
+  .section-head p{color:var(--brown-soft); font-size:1.03rem;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--white);}
+  .about .wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  .about-copy p{color:var(--brown-soft); font-size:1.05rem;}
+  .stat-row{
+    display:flex; gap:0; margin-top:32px; background:var(--cream); border-radius:24px; overflow:hidden;
+    box-shadow:var(--shadow-soft);
+  }
+  .stat-row .cell{flex:1; padding:22px 14px; text-align:center; border-right:1px solid rgba(74,53,41,0.08);}
+  .stat-row .cell:last-child{border-right:none;}
+  .stat-row .cell b{display:block; font-family:'Quicksand',sans-serif; font-size:1.35rem; color:var(--sage-dark);}
+  .stat-row .cell span{font-size:.8rem; color:var(--brown-soft);}
+  .about-media{position:relative;}
+  .about-media .frame{
+    border-radius:38% 62% 46% 54% / 58% 42% 58% 42%;
+    overflow:hidden; aspect-ratio:4/3.2; box-shadow:var(--shadow-soft); border:6px solid var(--cream);
+  }
+  .about-media .blob-back{position:absolute; inset:-8%; background:var(--sky); opacity:.28; border-radius:46% 54% 38% 62% / 55% 45% 55% 45%; z-index:0;}
+  .about-media .frame{position:relative; z-index:1;}
+
+  /* ---------- DOCTORS ---------- */
+  .doctors{background:var(--cream);}
+  .doc-grid{display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+  .doc-card{
+    background:var(--white); border-radius:var(--radius-lg); padding:28px;
+    box-shadow:var(--shadow-soft); text-align:center;
+  }
+  .doc-photo{
+    width:150px; height:150px; margin:0 auto 18px; border-radius:50%; overflow:hidden;
+    border:5px solid var(--cream-2); box-shadow:var(--shadow-soft);
+  }
+  .doc-card h3{font-size:1.28rem; margin-bottom:.15em;}
+  .doc-title{color:var(--coral-dark); font-family:'Quicksand',sans-serif; font-weight:700; font-size:.88rem; margin-bottom:14px;}
+  .doc-bio{color:var(--brown-soft); font-size:.97rem;}
+  .team-strip{
+    margin-top:44px; background:var(--white); border-radius:var(--radius-lg);
+    display:grid; grid-template-columns:220px 1fr; overflow:hidden; box-shadow:var(--shadow-soft); align-items:stretch;
+  }
+  .team-strip .frame{aspect-ratio:1/1;}
+  .team-strip .team-copy{padding:28px 32px; display:flex; flex-direction:column; justify-content:center;}
+  .team-strip .team-copy .eyebrow{align-self:flex-start;}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--white);}
+  .svc-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:22px;}
+  .svc-card{
+    border-radius:26px; padding:26px 20px; text-align:left;
+    box-shadow:var(--shadow-soft); transition:transform .18s ease;
+  }
+  .svc-card:hover{transform:translateY(-4px);}
+  .svc-card .icon{
+    width:52px;height:52px;border-radius:16px; display:flex; align-items:center; justify-content:center;
+    font-size:1.5rem; margin-bottom:14px; background:rgba(255,255,255,.6);
+  }
+  .svc-card h3{font-size:1.02rem; margin-bottom:.3em;}
+  .svc-card p{font-size:.88rem; color:var(--brown-soft); margin:0;}
+  .svc-card.c1{background:#FFEFE7;} .svc-card.c2{background:#EAF4E9;} .svc-card.c3{background:#E7F3F7;}
+  .svc-card.c4{background:#FFF6E4;} .svc-card.c5{background:#F3EAF6;} .svc-card.c6{background:#FFEFE7;}
+  .svc-card.c7{background:#EAF4E9;} .svc-card.c8{background:#E7F3F7;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{background:var(--cream);}
+  .gal-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:170px; gap:18px;
+  }
+  .gal-item{position:relative; border-radius:24px; overflow:hidden; box-shadow:var(--shadow-soft);}
+  .gal-item img, .gal-item .imgph{width:100%;height:100%;object-fit:cover;}
+  .gal-item.g1{grid-column:span 2; grid-row:span 2;}
+  .gal-item.g5{grid-column:span 2;}
+  .gal-cap{
+    position:absolute; left:0; right:0; bottom:0; padding:14px 16px 12px;
+    background:linear-gradient(0deg, rgba(74,53,41,0.72), transparent);
+    color:var(--white); font-family:'Quicksand',sans-serif; font-weight:700; font-size:.85rem;
+  }
+
+  /* ---------- WHY US ---------- */
+  .why{background:var(--white);}
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .why-card{text-align:center; padding:10px;}
+  .why-card .circle{
+    width:74px;height:74px;border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center;
+    font-size:1.9rem; background:var(--cream); box-shadow:var(--shadow-soft);
+  }
+  .why-card h3{font-size:1.02rem;}
+  .why-card p{font-size:.88rem; color:var(--brown-soft); margin:0;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--cream);}
+  .contact .wrap{display:grid; grid-template-columns:1fr 1fr; gap:44px;}
+  .contact-card{background:var(--white); border-radius:var(--radius-lg); padding:34px; box-shadow:var(--shadow-soft);}
+  .info-row{display:flex; gap:14px; margin-bottom:20px; align-items:flex-start;}
+  .info-row .ic{
+    width:42px;height:42px; border-radius:12px; background:var(--cream); display:flex; align-items:center; justify-content:center;
+    font-size:1.15rem; flex-shrink:0;
+  }
+  .info-row b{display:block; font-family:'Quicksand',sans-serif; font-size:.95rem;}
+  .info-row span, .info-row a{font-size:.92rem; color:var(--brown-soft);}
+  .hours-table{width:100%; border-collapse:collapse; margin-top:6px;}
+  .hours-table td{padding:8px 0; font-size:.92rem; border-bottom:1px solid var(--cream-2);}
+  .hours-table td:last-child{text-align:right; font-weight:700; font-family:'Quicksand',sans-serif;}
+  .map-wrap{border-radius:22px; overflow:hidden; box-shadow:var(--shadow-soft); margin-top:22px;}
+  .map-wrap iframe{width:100%; height:230px; border:0; display:block;}
+  .form-card{background:var(--white); border-radius:var(--radius-lg); padding:34px; box-shadow:var(--shadow-soft);}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-family:'Quicksand',sans-serif; font-weight:700; font-size:.88rem; margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%; border:2px solid var(--cream-2); border-radius:16px; padding:13px 16px;
+    font-family:'Nunito',sans-serif; font-size:.95rem; background:var(--cream); color:var(--brown); resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--sage);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--brown); color:#F2E7D8; padding:56px 0 26px;}
+  footer .wrap{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
+  footer h4{color:#F2E7D8; font-size:1.1rem;}
+  footer .tagline{color:#D9C6B0; font-size:.92rem; max-width:280px;}
+  footer .flinks{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
+  footer .flinks a{color:#D9C6B0; font-size:.92rem;}
+  footer .flinks a:hover{color:var(--coral);}
+  .social-row{display:flex; gap:12px; margin-top:14px;}
+  .social-row a{
+    width:40px;height:40px;border-radius:50%; background:rgba(255,255,255,.08);
+    display:flex; align-items:center; justify-content:center; font-size:1.05rem;
+  }
+  .social-row a:hover{background:var(--coral);}
+  .foot-bottom{
+    margin-top:40px; padding-top:22px; border-top:1px solid rgba(255,255,255,.1);
+    text-align:center; font-size:.82rem; color:#C9B79E;
+  }
+
+  /* ---------- WHATSAPP FAB ---------- */
+  .wa-fab{
+    position:fixed; right:22px; bottom:22px; z-index:200;
+    width:60px; height:60px; border-radius:50%; background:#25D366; color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:1.7rem;
+    box-shadow:0 12px 26px -6px rgba(37,211,102,0.6);
+    animation:pulse 2.6s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}
+    70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    .nav-links, .nav-cta .btn-outline{display:none;}
+    .hamburger{display:flex;}
+    .hero .wrap{grid-template-columns:1fr; gap:44px;}
+    .hero-media{order:-1; max-width:340px; margin:0 auto;}
+    .about .wrap{grid-template-columns:1fr;}
+    .about-media{order:-1; max-width:380px; margin:0 auto;}
+    .doc-grid{grid-template-columns:1fr;}
+    .team-strip{grid-template-columns:1fr;}
+    .team-strip .frame{aspect-ratio:16/9;}
+    .svc-grid{grid-template-columns:repeat(2,1fr);}
+    .gal-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
+    .gal-item.g1{grid-column:span 2; grid-row:span 1;}
+    .gal-item.g5{grid-column:span 2;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .contact .wrap{grid-template-columns:1fr;}
+    footer .wrap{grid-template-columns:1fr; gap:30px;}
+  }
+  @media (max-width:480px){
+    section{padding:60px 0;}
+    .svc-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .badge-float{display:none;}
+    .hero-stats-row{gap:18px;}
+    .team-strip .team-copy{padding:22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header>
+  <nav>
+    <a href="#home" class="logo">
+      <span class="tooth-mark">🦷</span>
+      Elite Family Dental
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#doctors">Our Doctors</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="tel:+918106666684">📞 Call</a>
+      <a class="btn btn-primary" href="https://wa.me/918106666684" target="_blank" rel="noopener">Book a Visit</a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#doctors">Our Doctors</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-primary" style="margin-top:14px; justify-content:center;" href="https://wa.me/918106666684" target="_blank" rel="noopener">Book a Visit 💬</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <svg class="blob blob-svg" style="top:-140px; left:-160px; width:420px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#FF8A65" fill-opacity="0.12" d="M45.6,-58.3C58.2,-49.6,67,-34.4,70.6,-18.1C74.2,-1.8,72.6,15.6,64.6,29.6C56.5,43.6,42,54.2,25.9,61.1C9.8,68,-8,71.2,-23.5,66.1C-39,61,-52.2,47.6,-60.6,31.8C-69.1,16,-72.9,-2.2,-68.5,-18.2C-64.1,-34.2,-51.6,-48,-37,-56.4C-22.4,-64.8,-11.2,-67.8,3.5,-72.4C18.2,-77,36.4,-83.2,45.6,-58.3Z" transform="translate(100 100)"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">🏡 Serving Attapur since 2019</div>
+      <h1>A Family Clinic,<br>For Your Family's <span class="accent">Smiles</span></h1>
+      <p class="hero-sub">Serving Attapur, Hyderabad since 2019 — led by Dr. Sanganand &amp; Dr. Nithya Gavle. Gentle, judgment-free dental care for every age, from your toddler's first checkup to your grandparents' next crown.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/918106666684" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a class="btn btn-outline" href="tel:+918106666684">📞 Call: 81066 66684</a>
+      </div>
+      <div class="hero-stats-row">
+        <div class="stat"><b>2019</b><span>Serving Attapur</span></div>
+        <div class="stat"><b>4.9★</b><span>379+ Google reviews</span></div>
+        <div class="stat"><b>2</b><span>Dedicated dentists</span></div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="blob-shape"></div>
+      <div class="frame">
+        <img src="sanganand&nithya.jpg" alt="Dr. Sanganand and Dr. Nithya Gavle, husband and wife dentist duo at Elite Family Dental" onerror="this.parentElement.innerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;😊🦷&lt;/span&gt;&lt;span&gt;Dr. Sanganand &amp; Dr. Nithya Gavle&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;sanganand&amp;nithya.jpg&lt;/span&gt;&lt;/div&gt;'">
+      </div>
+      <div class="badge-float b1"><span class="em">🦷</span> 6+ Yrs Trusted Care</div>
+      <div class="badge-float b2"><span class="em">👨‍👩‍👧</span> All Ages Welcome</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-copy">
+      <div class="eyebrow">💛 Our Story</div>
+      <h2>Two Dentists, One Table, <br>A Whole Neighborhood of Smiles</h2>
+      <p>Elite Family Dental began in 2019 as a simple idea: dental care should feel like visiting people who know your name, not a number on a chart. Dr. Sanganand and Dr. Nithya Gavle, a husband-and-wife dentist duo, built their practice in Attapur on that idea — combining years of clinical expertise with the kind of personal touch you'd expect from family.</p>
+      <p>Whether it's your child's very first cleaning or a root canal you've been putting off, our goal is the same: comfortable, unhurried, judgment-free care for every age, in a space that feels more like home than a hospital.</p>
+      <div class="stat-row">
+        <div class="cell"><b>Est. 2019</b><span>Rooted in Attapur</span></div>
+        <div class="cell"><b>4.9★</b><span>379+ reviews</span></div>
+        <div class="cell"><b>2 Dentists</b><span>Always here for you</span></div>
+      </div>
+    </div>
+    <div class="about-media">
+      <div class="blob-back"></div>
+      <div class="frame">
+        <img src="clinicdoc.jpg" alt="Dr. Sanganand and Dr. Nithya Gavle inside Elite Family Dental clinic" onerror="this.parentElement.innerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;🏥&lt;/span&gt;&lt;span&gt;Inside Elite Family Dental&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;clinicdoc.jpg&lt;/span&gt;&lt;/div&gt;'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCTORS ================= -->
+<section class="doctors" id="doctors">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">🩺 Meet the Doctors</div>
+      <h2>The Hands (and Hearts) Behind Your Care</h2>
+      <p>Two dentists, one shared belief — that every patient deserves gentle, thorough, personal attention.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-photo">
+          <img src="sanganand.jpg" alt="Dr. Sanganand Gavle, MDS Conservative Dentistry and Endodontics" onerror="this.parentElement.innerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;👨‍⚕️&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;sanganand.jpg&lt;/span&gt;&lt;/div&gt;'">
+        </div>
+        <h3>Dr. Sanganand Gavle</h3>
+        <div class="doc-title">MDS – Conservative Dentistry &amp; Endodontics</div>
+        <p class="doc-bio">With 11+ years of experience, Dr. Sanganand specializes in root canals, crowns, and restorative treatments. Patients describe his chairside manner as calm and reassuring — he takes the time to explain every step, so there are no surprises, just a healthier smile.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-photo">
+          <img src="nithya.jpg" alt="Dr. Nithya Gavle, dentist at Elite Family Dental" onerror="this.parentElement.innerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;👩‍⚕️&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;nithya.jpg&lt;/span&gt;&lt;/div&gt;'">
+        </div>
+        <h3>Dr. Nithya Gavle</h3>
+        <div class="doc-title">[PLACEHOLDER — add Dr. Nithya's qualification/specialty here]</div>
+        <p class="doc-bio">[PLACEHOLDER — add Dr. Nithya's bio here]</p>
+      </div>
+    </div>
+
+    <div class="team-strip">
+      <div class="frame">
+        <img src="clinicdoc.jpg" alt="Dr. Sanganand and Dr. Nithya Gavle together at the clinic" onerror="this.parentElement.innerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;👨‍👩‍⚕️&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;clinicdoc.jpg&lt;/span&gt;&lt;/div&gt;'">
+      </div>
+      <div class="team-copy">
+        <div class="eyebrow">👨‍👩‍👧‍👦 The Team</div>
+        <h3 style="margin-bottom:.2em;">Dr. Sanganand &amp; Dr. Nithya — always here for your family.</h3>
+        <p style="margin:0; color:var(--brown-soft);">Together, they've built a clinic where treatment plans are explained in plain language, appointments run on time, and every visit ends with a smile — literally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">🦷 Services</div>
+      <h2>Everything Your Family's Smile Needs</h2>
+      <p>No confusing jargon — just honest care, explained simply.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card c1"><div class="icon">🩹</div><h3>Root Canal Treatment</h3><p>Gentle, pain-focused treatment to save a hurting tooth — no more sleepless nights.</p></div>
+      <div class="svc-card c2"><div class="icon">😁</div><h3>Braces &amp; Aligners</h3><p>Straighter teeth over time, with options for both kids and adults.</p></div>
+      <div class="svc-card c3"><div class="icon">✨</div><h3>Teeth Whitening</h3><p>A safe, in-clinic brightening treatment for a more confident smile.</p></div>
+      <div class="svc-card c4"><div class="icon">👑</div><h3>Crowns &amp; Veneers</h3><p>Custom caps and covers that restore strength and look completely natural.</p></div>
+      <div class="svc-card c5"><div class="icon">🔩</div><h3>Dental Implants</h3><p>A permanent, natural-feeling replacement for a missing tooth.</p></div>
+      <div class="svc-card c6"><div class="icon">👨‍👩‍👧</div><h3>Kids &amp; Family Dentistry</h3><p>Friendly, patient care that helps little ones actually enjoy the dentist.</p></div>
+      <div class="svc-card c7"><div class="icon">🦷</div><h3>Extractions</h3><p>Safe, comfortable removal of teeth that can't be saved, done with care.</p></div>
+      <div class="svc-card c8"><div class="icon">🪥</div><h3>Routine Checkups &amp; Cleaning</h3><p>Regular visits that catch small issues before they become big ones.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">📸 Take a Look Inside</div>
+      <h2>A Peek Into Our Clinic</h2>
+      <p>Cozy, clean, and welcoming — just how a family dental clinic should feel.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item g1">
+        <img src="interior.jpg" alt="Cozy waiting area at Elite Family Dental" onerror="this.outerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;🛋️&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;interior.jpg&lt;/span&gt;&lt;/div&gt;'">
+        <div class="gal-cap">Our Cozy Waiting Area</div>
+      </div>
+      <div class="gal-item g2">
+        <img src="exterior.jpg" alt="Exterior of Elite Family Dental in Raj Arcade, Attapur" onerror="this.outerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;🏢&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;exterior.jpg&lt;/span&gt;&lt;/div&gt;'">
+        <div class="gal-cap">Find Us in Raj Arcade, Attapur</div>
+      </div>
+      <div class="gal-item g3">
+        <img src="operation.jpg" alt="Modern treatment room at Elite Family Dental" onerror="this.outerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;🩺&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;operation.jpg&lt;/span&gt;&lt;/div&gt;'">
+        <div class="gal-cap">Our Modern Treatment Room</div>
+      </div>
+      <div class="gal-item g4">
+        <img src="clinicdoc.jpg" alt="Dr. Sanganand and Dr. Nithya Gavle at the clinic" onerror="this.outerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;👨‍👩‍⚕️&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;clinicdoc.jpg&lt;/span&gt;&lt;/div&gt;'">
+        <div class="gal-cap">Dr. Sanganand &amp; Dr. Nithya</div>
+      </div>
+      <div class="gal-item g5">
+        <img src="reception.jpg" alt="Friendly reception area at Elite Family Dental" onerror="this.outerHTML='&lt;div class=&quot;imgph&quot;&gt;&lt;span class=&quot;em&quot;&gt;🛎️&lt;/span&gt;&lt;span class=&quot;fn&quot;&gt;reception.jpg (placeholder — filename TBD)&lt;/span&gt;&lt;/div&gt;'">
+        <div class="gal-cap">A Warm Welcome at Reception</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">💚 Why Families Choose Us</div>
+      <h2>Care That Feels Like Home</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="circle">🤗</div><h3>Gentle, Family-Friendly Care</h3><p>Patient, unhurried treatment for nervous kids and adults alike.</p></div>
+      <div class="why-card"><div class="circle">⚙️</div><h3>Modern Equipment</h3><p>Up-to-date tools and techniques for safer, more comfortable visits.</p></div>
+      <div class="why-card"><div class="circle">📍</div><h3>Convenient Attapur Location</h3><p>Easy to find in Raj Arcade, with parking close by.</p></div>
+      <div class="why-card"><div class="circle">🕗</div><h3>Flexible Hours, 7 Days a Week</h3><p>Open every day of the week to fit around your schedule.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <div class="section-head" style="text-align:left; margin:0 0 30px;">
+        <div class="eyebrow">📍 Visit Us</div>
+        <h2>We'd Love to See You</h2>
+        <p>Walk-ins welcome, but a quick call or WhatsApp message helps us save you a chair.</p>
+      </div>
+      <div class="contact-card">
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div><b>Address</b><span>Elite Family Dental, Pillar No 143, Raj Arcade, H.No.4-6-114/1, 1st Floor, Opposite Rambagh, Rambagh Road, Near Attapur, Hyderabad, Telangana 500048</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📞</div>
+          <div><b>Phone</b><br><a href="tel:+918106666684">81066 66684</a> &nbsp;·&nbsp; <a href="tel:+918919074607">89190 74607</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">✉️</div>
+          <div><b>Email</b><br><a href="mailto:Sangananad.gavle@gmail.com">Sangananad.gavle@gmail.com</a></div>
+        </div>
+        <div class="info-row" style="align-items:stretch;">
+          <div class="ic">🕗</div>
+          <div style="flex:1;">
+            <b>Hours</b>
+            <table class="hours-table">
+              <tr><td>Mon – Sat</td><td>10:00 AM – 9:00 PM</td></tr>
+              <tr><td>Sunday</td><td>10:00 AM – 2:00 PM</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe loading="lazy" title="Elite Family Dental location map" src="https://www.google.com/maps?q=Raj+Arcade,+Rambagh+Road,+Attapur,+Hyderabad,+Telangana+500048&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="section-head" style="text-align:left; margin:0 0 30px;">
+        <div class="eyebrow">✏️ Say Hello</div>
+        <h2>Send Us a Quick Message</h2>
+        <p>We'll get back to you the same day.</p>
+      </div>
+      <form class="form-card" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch soon 💛'); this.reset();">
+        <div class="field">
+          <label for="cname">Name</label>
+          <input id="cname" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="cphone">Phone</label>
+          <input id="cphone" type="tel" placeholder="Your phone number" required>
+        </div>
+        <div class="field">
+          <label for="cmsg">Message</label>
+          <textarea id="cmsg" rows="4" placeholder="How can we help?" required></textarea>
+        </div>
+        <button class="btn btn-sage" type="submit" style="width:100%;">Say Hello 👋</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo" style="color:#F2E7D8;">
+        <span class="tooth-mark">🦷</span> Elite Family Dental
+      </div>
+      <p class="tagline">A family-run dental clinic in Attapur, Hyderabad — gentle, honest care for every age, since 2019.</p>
+      <div class="social-row">
+        <a href="https://www.instagram.com/elitefamilydental_/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+        <a href="https://www.youtube.com/channel/UCmiMRSHR_8sQ8DXF3qBOrFw" target="_blank" rel="noopener" aria-label="YouTube">▶️</a>
+        <a href="https://x.com/ELITEFAMILYDEN1" target="_blank" rel="noopener" aria-label="Twitter / X">✕</a>
+        <a href="https://www.facebook.com/ELITEFAMILYDENTAL/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="flinks">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#doctors">Our Doctors</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get In Touch</h4>
+      <ul class="flinks">
+        <li><a href="tel:+918106666684">81066 66684</a></li>
+        <li><a href="tel:+918919074607">89190 74607</a></li>
+        <li><a href="mailto:Sangananad.gavle@gmail.com">Sangananad.gavle@gmail.com</a></li>
+        <li><a href="#contact">Attapur, Hyderabad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom" id="footBottom">© 2026 Elite Family Dental — Made with care in Attapur, Hyderabad.</div>
+</footer>
+
+<!-- ================= WHATSAPP FAB ================= -->
+<a class="wa-fab" href="https://wa.me/918106666684" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+  document.getElementById('hamburgerBtn').addEventListener('click', function(){
+    document.getElementById('mobilePanel').classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('mobilePanel').classList.remove('open'); });
+  });
+  document.getElementById('footBottom').textContent = '© ' + new Date().getFullYear() + ' Elite Family Dental — Made with care in Attapur, Hyderabad.';
+</script>
+
+</body>
+</html>
