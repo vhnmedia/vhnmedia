@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d1b2a;
+  color: #f1ede4;
+}
+
+::selection {
+  background-color: #c89b3c;
+  color: #0d1b2a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-x {
+  @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+}
+
+.eyebrow {
+  @apply font-mono text-[11px] uppercase tracking-[0.22em] text-gold;
+}
+
+.hairline {
+  @apply border-hairline/60;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-7 py-3.5 font-body text-[15px] font-semibold text-ink transition-all duration-200 hover:bg-gold-bright hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-6px_rgba(200,155,60,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-sm border border-slate-dark/70 px-7 py-3.5 font-body text-[15px] font-semibold text-cream transition-all duration-200 hover:border-gold hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+}
+
+.section-pad {
+  @apply py-20 md:py-28;
+}
